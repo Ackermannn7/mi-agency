@@ -1,5 +1,4 @@
 export const Post = ({ imageUrl, title, link, categories, index }) => {
-  console.log(categories);
   const MAX_TITLE_LENGTH = 50; // Adjust this to your desired maximum length
 
   const truncatedTitle =

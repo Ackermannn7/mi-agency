@@ -20,7 +20,6 @@ export const ItemLang = ({
     segments[1] = locale;
     return segments.join("/");
   };
-  console.log(redirectedPathName(data.key));
 
   const success = () => {
     toast.success(

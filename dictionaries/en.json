@@ -1,5 +1,6 @@
 {
   "locale": "en",
+  "backend_locale": "en",
   "home": {
     "header": "Who is this platform for?",
     "button": "Pass the tests"

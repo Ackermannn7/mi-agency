@@ -1,5 +1,6 @@
 import robotLookImg from "/public/_assets/images/robot-look.png";
 import { LoginGoogleProvider } from "../../components/screens/SignUp/LoginGoogleProvider";
+import { Form } from "../../components/screens/SignUp/Form";
 import CreatedProfile from "../../components/screens/SignUp/CreatedProfile";
 import Image from "next/image";
 import { getDictionary } from "../../../../../getDictionary";
@@ -13,6 +14,10 @@ export default async function Page({ params }) {
   return (
     <main className="md:pt-[60px]">
       <LoginGoogleProvider session={session} lang={lang} />
+      <h2 className="w-[20px] ml-[340px] text-center text-[#347AEC] font-unbounded text-[22px] font-[400] mb-[22px]">
+        Or
+      </h2>
+      {!session && <Form isRegistered={isRegistered} lang={lang} />}
       {session && (
         <div className="flex gap-[57px] w-full justify-center">
           {!isRegistered ? (

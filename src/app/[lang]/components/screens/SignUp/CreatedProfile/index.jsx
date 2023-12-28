@@ -7,7 +7,6 @@ import { useRef, useState } from "react";
 import { Alert, Modal } from "antd";
 import ky from "ky";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
 
 const success = (lang) => {
   Modal.success({
@@ -58,7 +57,7 @@ const CreatedProfile = ({ session, lang }) => {
     };
 
     await ky
-      .put("/api/auth/sign-up", { json: data })
+      .put("/api/auth/google-sign-up", { json: data })
       .json()
       .then(() => success(lang))
       .catch((err) => console.log(err));
@@ -133,10 +132,6 @@ const CreatedProfile = ({ session, lang }) => {
         />
       </form>
 
-      {/* <hr />
-      <button className="mx-auto block mt-[15px] font-unbounded">
-        Зареєстровані? <br /> Увійти до облікового запису
-      </button> */}
       {messageError !== "" && (
         <Alert
           className="mt-[30px] md:mt-[15px] rounded-t-[0px] border-t-0"

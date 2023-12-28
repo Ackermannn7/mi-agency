@@ -9,7 +9,6 @@ export const ItemNav = ({ data, setCurrentTab, currentTab }) => {
   const segments = pathname.replace(/^\/|\/$/g, "").split("/");
   const slug = segments.length > 1 ? segments.pop() : "";
 
-  console.log(data);
   return (
     <li key={data.key} onClick={() => setCurrentTab(data.key)}>
       <Link

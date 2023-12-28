@@ -18,7 +18,6 @@ export const Nav = ({ lang, user }) => {
   if (isMobile) {
     changeOrder();
   }
-  console.log("Sorted elements:", asideElements);
   const [currentTab, setCurrentTab] = useState("1");
   return (
     <ul className="flex flex-row md:flex-col items-start gap-[20px]">

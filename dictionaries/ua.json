@@ -1,5 +1,6 @@
 {
   "locale": "ua",
+  "backend_locale": "uk",
   "home": {
     "header": "Для кого створена ця платформа?",
     "button": "Пройти тестування"

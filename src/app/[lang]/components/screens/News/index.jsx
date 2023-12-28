@@ -47,3 +47,31 @@ const News = () => {
 };
 
 export default News;
+
+// const News = () => {
+//   useEffect(() => {
+//     // Load the SociableKit widget script
+//     const script = document.createElement("script");
+//     script.src =
+//       "https://widgets.sociablekit.com/linkedin-page-posts/widget.js";
+//     script.async = true;
+//     script.defer = true;
+//     document.body.appendChild(script);
+
+//     // Create the container div with the necessary data attribute
+//     const container = document.createElement("div");
+//     container.classList.add("sk-ww-linkedin-page-post");
+//     container.setAttribute("data-embed-id", "247755");
+//     document.body.appendChild(container);
+
+//     // Cleanup (optional, to remove the script and container when the component unmounts)
+//     return () => {
+//       document.body.removeChild(script);
+//       document.body.removeChild(container);
+//     };
+//   }, []);
+
+//   return null; // No need to return anything as the script handles rendering
+// };
+
+// export default News;
