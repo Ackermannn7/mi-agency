@@ -8,6 +8,7 @@ import axios from "axios";
 // import { signOut, useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
 import MainButton from "../../UI/Buttons/MainButton";
+import { useScreenSize } from "@/hooks/useScreenSize";
 
 const success = (lang) => {
   Modal.success({
@@ -28,23 +29,6 @@ const success = (lang) => {
   });
 };
 
-// const errorServer = (lang) => {
-//   Modal.error({
-//     title: lang.login_page.created_profile.error_modal.title,
-//     content: (
-//       <>
-//         <div>
-//           <p className='text-[14px] font-unbounded'>
-//             {lang.login_page.created_profile.error_modal.title}
-//           </p>
-//         </div>
-//       </>
-//     ),
-//     closable: true,
-//     centered: true,
-//     footer: null,
-//   });
-// };
 const errorModal = (messageError) => {
   Modal.error({
     title: lang.login_page.created_profile.error_modal.title,
@@ -59,6 +43,7 @@ const errorModal = (messageError) => {
   });
 };
 const MyProfile = ({ lang }) => {
+  const { width } = useScreenSize();
   const router = useRouter();
   const [contactMsg, setContactMsg] = useState(false);
   const inputFileRef = useRef(null);
@@ -200,7 +185,7 @@ const MyProfile = ({ lang }) => {
   }
 
   return (
-    <section className='flex flex-col md:flex-row relative items-start gap-[20px] md:gap-[47px] bg-white max-w-[842px] w-full py-[25px] px-[30px] rounded-[15px] shadow-xl'>
+    <section className='flex flex-col md:flex-row relative items-start gap-[20px] xl:gap-[47px] bg-white w-full py-[25px] px-[30px] rounded-[15px] shadow-xl'>
       <button
         className='text-[#5D5D5D] font-unbounded font-[400] absolute right-[25px] top-[20px]'
         onClick={() => {
@@ -209,16 +194,19 @@ const MyProfile = ({ lang }) => {
           setTimeout(() => {
             window.location.reload();
           }, 1000);
-          // signOut();
         }}
       >
         {lang.profile_page.user.sign_out_btn}
       </button>
-      <div>
+      <div className='flex mx-auto md:mx-0'>
         <input className='hidden' id='projectCoverUploads' type='file' />
         {userData?.photo ? (
-          <div className='flex items-center'>
-            <div className='w-[170px] h-[170px] rounded-[100%] border-1 border-solid border-[#347AEC] relative'>
+          <div
+            className={`mx-auto flex items-center gap-[10px] ${
+              width < 380 && "flex-col justify-center"
+            }`}
+          >
+            <div className='rounded-[100%] border-1 border-solid border-[#347AEC] relative'>
               <button
                 onClick={handleDeletePhoto}
                 className='z-10 top-[5px] left-[10px] absolute w-[35px] h-[35px] rounded-[100%] bg-[#347AEC] hover:bg-[#6764E7] duration-500 flex items-center justify-center'
@@ -242,12 +230,12 @@ const MyProfile = ({ lang }) => {
                 className='rounded-[100%]'
                 src={userData.photo}
                 alt={userData.first_name}
-                width={170}
-                height={170}
+                width={width < 380 ? 150 : 170}
+                height={width < 380 ? 150 : 170}
                 loading='lazy'
               />
             </div>
-            <div className='md:hidden ml-[15px]'>
+            <div className='md:hidden'>
               <p className='mb-[5px] text-[#5E5E5E] text-[10px] font-[500]'>
                 {lang.profile_page.user.greeting}
               </p>
@@ -257,7 +245,11 @@ const MyProfile = ({ lang }) => {
             </div>
           </div>
         ) : (
-          <div className='flex items-center'>
+          <div
+            className={`mx-auto flex items-center gap-[10px] ${
+              width < 380 && "flex-col justify-center"
+            }`}
+          >
             <button
               className='group hover:bg-gradient-to-r from-[#347AEC] to-[#6764E7] duration-500 w-[170px] h-[170px] rounded-[100%] border-2 border-dashed border-[#347AEC] cursor-pointer'
               onClick={() => inputFileRef.current.click()}
@@ -278,7 +270,7 @@ const MyProfile = ({ lang }) => {
               className='group hover:bg-gradient-to-r from-[#347AEC] to-[#6764E7] duration-500 w-[170px] h-[170px] rounded-[100%] border-2 border-dashed border-[#347AEC] cursor-pointer'
             />
 
-            <div className='md:hidden ml-[15px]'>
+            <div className='md:hidden'>
               <p className='mb-[5px] text-[#5E5E5E] text-[10px] font-[500]'>
                 {lang.profile_page.user.greeting}
               </p>
@@ -315,7 +307,7 @@ const MyProfile = ({ lang }) => {
           />
           <button onClick={handleSetPhone}>
             <svg
-              className='w-[25px] h-[25px] md:w-[16px] md:h-[16px]'
+              className='w-[25px] h-[25px] xl:w-[16px] xl:h-[16px]'
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 16 16'
               fill='none'

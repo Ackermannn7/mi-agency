@@ -12,24 +12,19 @@ export default async function Page({ params }) {
 
   const lang = await getDictionary(params.lang);
   return (
-    <main className="md:pt-[60px]">
+    <main className='xl:pt-[35px]'>
       <Authorization session={session} lang={lang} />
-      {/* <h2 className="w-[20px] mx-auto md:ml-[340px] text-center text-[#347AEC] font-unbounded text-[22px] font-[400] mb-[22px]">
+      {/* <h2 className="w-[20px] mx-auto xl:ml-[340px] text-center text-[#347AEC] font-unbounded text-[22px] font-[400] mb-[22px]">
         Or
       </h2> */}
       {session && (
-        <div className="flex gap-[57px] w-full justify-center">
+        <div className='flex gap-[57px] w-full justify-center'>
           {!isRegistered ? (
             <>
               <CreatedProfile lang={lang} session={session} />
-              <div className="hidden md:block relative">
-                <div className="w-[156px] h-[156px] bg-[#347AEC] rounded-[100%] absolute -z-10 top-[40%] right-0" />
-                <Image
-                  src={robotLookImg}
-                  alt={"robot-look"}
-                  width={207}
-                  height={279}
-                />
+              <div className='hidden xl:block relative'>
+                <div className='w-[156px] h-[156px] bg-[#347AEC] rounded-[100%] absolute -z-10 top-[40%] right-0' />
+                <Image src={robotLookImg} alt={"robot-look"} width={207} height={279} />
               </div>
             </>
           ) : (

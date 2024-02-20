@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { useScreenSize } from "@/hooks/useScreenSize";
 import axios from "axios";
 export const ProfileTests = ({ lang }) => {
-  const { isMobile } = useScreenSize();
+  const { isNotLaptop } = useScreenSize();
   const [userTests, setUserTests] = useState(null);
   const localizedPAEIResults = paei_results(lang);
   const localizedEnneagramResults = enneagrama_results(lang);
@@ -63,9 +63,8 @@ export const ProfileTests = ({ lang }) => {
 
     return acc;
   }, {});
-
   const handleNavigateTest = (id) => {
-    isMobile && router.push(`/${lang.locale}/result-test/${id}/`);
+    isNotLaptop && router.push(`/${lang.locale}/result-test/${id}/`);
   };
   return (
     <div>
@@ -75,15 +74,15 @@ export const ProfileTests = ({ lang }) => {
             {testType === "1" ? (
               <>
                 <h2 className='text-[22px] font-semibold mb-[15px]'>{lang.enneagram_page.title}</h2>
-                <div className='md:w-[850px] h-[40px] bg-gradient-to-r from-[#347AEC] to-[#6764E7] flex items-center py-[6px] px-[15px] md:px-[29px] font-unbounded text-[14px] font-[400] text-white md:text-[16px] rounded-[10px] mb-[10px]'>
-                  <div className='w-full md:w-[850px] flex justify-between'>
-                    <div className='w-[50%] md:w-[35%] md:px-[10px]'>
+                <div className='h-[40px] bg-gradient-to-r from-[#347AEC] to-[#6764E7] flex items-center py-[6px] px-[15px] xl:px-[29px] font-unbounded text-[14px] font-[400] text-white xl:text-[16px] rounded-[10px] mb-[10px]'>
+                  <div className='w-full flex justify-between'>
+                    <div className='w-[50%] xl:w-[35%] xl:px-[10px]'>
                       <p>{lang.profile_page.user.tests_block.result}</p>
                     </div>
-                    <div className='w-[50%] md:w-[35%] md:pl-[40px]'>
+                    <div className='w-[50%] xl:w-[35%] xl:pl-[40px]'>
                       <p>{lang.profile_page.user.tests_block.date}</p>
                     </div>
-                    <div className='hidden md:block w-[30%] px-[10px]'>
+                    <div className='hidden xl:block w-[30%] px-[10px]'>
                       <p></p>
                     </div>
                   </div>
@@ -92,15 +91,15 @@ export const ProfileTests = ({ lang }) => {
             ) : testType === "2" ? (
               <>
                 <h2 className='text-[22px] font-semibold mb-[15px]'>{lang.paei_page.title}</h2>
-                <div className='md:w-[850px] h-[40px] bg-gradient-to-r from-[#347AEC] to-[#6764E7] flex items-center py-[6px] px-[15px] md:px-[29px] font-unbounded text-[14px] font-[400] text-white md:text-[16px] rounded-[10px] mb-[10px]'>
-                  <div className='w-full md:w-[850px] flex justify-between'>
-                    <div className='w-[50%] md:w-[35%] md:px-[10px]'>
+                <div className='h-[40px] bg-gradient-to-r from-[#347AEC] to-[#6764E7] flex items-center py-[6px] px-[15px] xl:px-[29px] font-unbounded text-[14px] font-[400] text-white xl:text-[16px] rounded-[10px] mb-[10px]'>
+                  <div className='w-full flex justify-between'>
+                    <div className='w-[50%] xl:w-[35%] xl:px-[10px]'>
                       <p>{lang.profile_page.user.tests_block.result}</p>
                     </div>
-                    <div className='w-[50%] md:w-[35%] md:pl-[40px]'>
+                    <div className='w-[50%] xl:w-[35%] xl:pl-[40px]'>
                       <p>{lang.profile_page.user.tests_block.date}</p>
                     </div>
-                    <div className='hidden md:block w-[30%] px-[10px]'>
+                    <div className='hidden xl:block w-[30%] px-[10px]'>
                       <p></p>
                     </div>
                   </div>
@@ -113,21 +112,21 @@ export const ProfileTests = ({ lang }) => {
                 {testType === "1" ? (
                   <>
                     <div
-                      className='md:w-[850px] h-[40px] bg-white flex items-center py-[6px] px-[15px] md:px-[29px] font-unbounded text-[12px] font-[400] text-white md:text-[16px] rounded-[10px] mb-[10px]'
+                      className='h-[40px] bg-white flex items-center py-[6px] px-[15px] xl:px-[29px] font-unbounded text-[12px] font-[400] text-white xl:text-[16px] rounded-[10px] mb-[10px]'
                       onClick={() => handleNavigateTest(test.id)}
                     >
-                      <div className='w-full md:w-[850px] text-[#262626] flex justify-between'>
-                        <div className='w-[50%] md:w-[35%] md:px-[10px]'>
+                      <div className='w-full text-[#262626] flex justify-between'>
+                        <div className='w-[50%] xl:w-[35%] xl:px-[10px]'>
                           <p>
                             {localizedEnneagramResults.find(
                               (result) => result.type.toString() === test.type,
                             )?.title || ""}
                           </p>
                         </div>
-                        <div className='w-[50%] md:w-[35%] md:pl-[40px]'>
+                        <div className='w-[50%] xl:w-[35%] xl:pl-[40px]'>
                           <p>{new Date(test.created_at).toLocaleDateString("en-GB")}</p>
                         </div>
-                        <div className='hidden md:block w-[30%] px-[10px] text-[#347AEC] font-[700] text-right'>
+                        <div className='hidden lg:block w-[30%] px-[10px] text-[#347AEC] font-[700] text-right'>
                           <Link href={`/${lang.locale}/result-test/${test.id}/`}>
                             {lang.profile_page.user.tests_block.more_info_btn}
                           </Link>
@@ -138,17 +137,17 @@ export const ProfileTests = ({ lang }) => {
                 ) : testType === "2" ? (
                   <>
                     <div
-                      className='md:w-[850px] h-[40px] bg-white flex items-center py-[6px] px-[15px] md:px-[29px] font-unbounded text-[12px] font-[400] text-white md:text-[16px] rounded-[10px] mb-[10px]'
+                      className='h-[40px] bg-white flex items-center py-[6px] px-[15px] xl:px-[29px] font-unbounded text-[12px] font-[400] text-white xl:text-[16px] rounded-[10px] mb-[10px]'
                       onClick={() => handleNavigateTest(test.id)}
                     >
-                      <div className='w-full md:w-[850px] text-[#262626] flex justify-between'>
-                        <div className='w-[50%] md:w-[35%] md:px-[10px]'>
+                      <div className='w-full text-[#262626] flex justify-between'>
+                        <div className='w-[50%] xl:w-[35%] xl:px-[10px]'>
                           <p>{test.type}</p>
                         </div>
-                        <div className='w-[50%] md:w-[35%] md:pl-[40px]'>
+                        <div className='w-[50%] xl:w-[35%] xl:pl-[40px]'>
                           <p>{new Date(test.created_at).toLocaleDateString("en-GB")}</p>
                         </div>
-                        <div className='hidden md:block w-[30%] px-[10px] text-[#347AEC] font-[700] text-right'>
+                        <div className='hidden lg:block w-[30%] px-[10px] text-[#347AEC] font-[700] text-right'>
                           <Link href={`/${lang.locale}/result-test/${test.id}/`}>
                             {lang.profile_page.user.tests_block.more_info_btn}
                           </Link>

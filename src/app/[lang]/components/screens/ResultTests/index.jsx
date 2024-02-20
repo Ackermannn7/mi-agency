@@ -74,7 +74,7 @@ const ResultTests = ({ lang, id }) => {
 
   if (resultTest?.test === 1) {
     return (
-      <div className='mb-[50px] md:mb-0 flex flex-col items-center md:items-start md:flex-row gap-[20px]'>
+      <div className='mb-[50px] xl:mb-0 flex flex-col items-center md:items-start md:flex-row gap-[20px]'>
         <div>
           {imageSrc && (
             <Image
@@ -85,7 +85,7 @@ const ResultTests = ({ lang, id }) => {
             />
           )}
         </div>
-        <div className='md:w-[520px] md:h-[460px]'>
+        <div className='md:w-[400px] lg:w-[520px] lg:h-[460px]'>
           <h1 className='text-center md:text-left text-[22px] md:text-[30px] font-unbounded mb-[10px]'>
             {enneagramResultData.title}
           </h1>
@@ -94,8 +94,8 @@ const ResultTests = ({ lang, id }) => {
           </p>
           <p className='my-[20px] font-medium'>{enneagramResultData.description}</p>
           <p className='mb-[20px] font-medium'>
-            <span className='text-[#347AEC] font-semibold'>{lang.enneagram_page.lifeCreed}</span>{" "}
-            {enneagramResultData.lifeCreed}
+            <span className='text-[#347AEC] font-semibold'>{lang.enneagram_page.lifeMotto}</span>{" "}
+            {enneagramResultData.lifeMotto}
           </p>
           <p className='mb-[20px] font-medium'>
             <span className='text-[#347AEC] font-semibold'>{lang.enneagram_page.keyword}</span>{" "}
@@ -118,7 +118,7 @@ const ResultTests = ({ lang, id }) => {
     );
   } else if (resultTest?.test === 2) {
     return (
-      <div className='mb-[50px] md:mb-0 flex flex-col items-center md:items-start md:flex-row gap-[20px]'>
+      <div className='mb-[50px] lg:mb-0 flex flex-col items-center md:items-start md:flex-row gap-[20px]'>
         <div>
           {imageSrc && (
             <Image
@@ -131,12 +131,13 @@ const ResultTests = ({ lang, id }) => {
             />
           )}
         </div>
-        <div className='md:w-[520px] md:h-[460px]'>
-          <h1 className='text-center text-[22px] md:text-[30px] font-unbounded mb-[10px]'>
-            {lang.header} {resultTest?.type}
+        <div className='md:w-[400px] lg:w-[520px] lg:h-[460px]'>
+          <h1 className='text-center md:text-left text-[22px] lg:text-[30px] font-unbounded mb-[10px]'>
+            {lang.paei_result.header} {resultTest?.type}
           </h1>
 
           <p className='mt-[10px] mb-[30px] font-medium'>
+            <span className='text-[#347AEC] font-semibold'>{resultTest?.type.split("")[0]}: </span>
             {
               localizedPAEIResults.find((desc) => desc.letter === "P")[
                 resultTest?.type.includes("P")
@@ -148,6 +149,7 @@ const ResultTests = ({ lang, id }) => {
             }
           </p>
           <p className='mb-[30px] font-medium'>
+            <span className='text-[#347AEC] font-semibold'>{resultTest?.type.split("")[1]}: </span>
             {
               localizedPAEIResults.find((desc) => desc.letter === "A")[
                 resultTest?.type.includes("A")
@@ -159,6 +161,7 @@ const ResultTests = ({ lang, id }) => {
             }
           </p>
           <p className='mb-[30px] font-medium'>
+            <span className='text-[#347AEC] font-semibold'>{resultTest?.type.split("")[2]}: </span>
             {
               localizedPAEIResults.find((desc) => desc.letter === "E")[
                 resultTest?.type.includes("E")
@@ -170,6 +173,7 @@ const ResultTests = ({ lang, id }) => {
             }
           </p>
           <p className='mb-[30px] font-medium'>
+            <span className='text-[#347AEC] font-semibold'>{resultTest?.type.split("")[3]}: </span>
             {
               localizedPAEIResults.find((desc) => desc.letter === "I")[
                 resultTest?.type.includes("I")
@@ -181,7 +185,7 @@ const ResultTests = ({ lang, id }) => {
             }
           </p>
 
-          {/* <div className="text-center mb-[20px] md:mb-0">
+          {/* <div className="text-center mb-[20px] xl:mb-0">
             <MainButton
               className="save-button w-[255px] h-[40px] text-[16px] px-[10px] !important"
               label={lang.paei_result.save_button}

@@ -51,9 +51,9 @@ export default function Sidebar({ lang }) {
     return <div>Error: {error}</div>;
   }
   return (
-    <aside className='w-full h-[80px] md:w-[250px] md:h-[610px]'>
-      <div className='w-full h-full bg-white shadow-lg rounded-t-[10px] md:rounded-[15px] pr-[0px] py-[15px] md:px-[20px] md:py-[25px] flex flex-row md:flex-col justify-center md:justify-between items-center md:items-start'>
-        <div>
+    <aside className='w-full h-[80px] xl:w-[250px] xl:h-[610px]'>
+      <div className='w-full h-full bg-white shadow-lg rounded-t-[10px] xl:rounded-[15px] pr-[0px] py-[15px] xl:px-[20px] xl:py-[25px] flex flex-row xl:flex-col justify-between xl:justify-between items-center xl:items-start'>
+        <div className='hidden xl:block'>
           <div>
             <User
               userData={userData}
@@ -62,19 +62,17 @@ export default function Sidebar({ lang }) {
               lang={lang}
             />
           </div>
-          <div className='hidden md:block pt-[28px] pb-[20px]'>
+          <div className='hidden xl:block pt-[28px] pb-[20px]'>
             <OpacityDivider />
           </div>
-
           <nav>
-            <Nav
-              userData={userData}
-              // user={user}
-              lang={lang}
-            />
+            <Nav userData={userData} lang={lang} />
           </nav>
         </div>
-        <div className='hidden md:block'>
+        <nav className='w-full xl:hidden'>
+          <Nav userData={userData} lang={lang} />
+        </nav>
+        <div className='hidden xl:block'>
           <Lang />
           <Socials />
         </div>

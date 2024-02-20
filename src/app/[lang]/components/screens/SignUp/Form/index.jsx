@@ -8,7 +8,8 @@ import { Alert, Modal } from "antd";
 import axios from "axios";
 // import ky from "ky";
 import Link from "next/link";
-import { validationPassword } from "@/_helpers/validationPassword";
+import { useScreenSize } from "@/hooks/useScreenSize";
+// import { validationPassword } from "@/_helpers/validationPassword";
 const success = (lang) => {
   Modal.success({
     title: lang.login_page.created_profile.success_modal.title,
@@ -17,7 +18,7 @@ const success = (lang) => {
         <p className='text-[16px] mb-[10px] font-unbounded'>
           {lang.login_page.created_profile.success_modal.register_text}
         </p>
-        <MainButton className='ml-[50px] md:ml-[40px]'>
+        <MainButton className='ml-[50px] xl:ml-[40px]'>
           <Link className='text-white' href={`/${lang.locale}/get-tested`}>
             {lang.login_page.created_profile.success_modal.link}
           </Link>
@@ -30,7 +31,8 @@ const success = (lang) => {
   });
 };
 
-const errorModal = (messageError) => {
+const errorModal = (lang, messageError) => {
+  console.log(lang);
   Modal.error({
     title: lang.login_page.created_profile.error_modal.title,
     content: (
@@ -45,11 +47,10 @@ const errorModal = (messageError) => {
 };
 
 export const Form = ({ lang }) => {
+  const { isNotDesktop } = useScreenSize();
   const router = useRouter();
   const emailRef = useRef(null);
-  const usernameRef = useRef(null);
   const firstnameRef = useRef(null);
-  const lastnameRef = useRef(null);
   const passwordRef = useRef(null);
   const [modal, setModal] = useState(false);
   const [isLoginForm, setIsLoginForm] = useState(false);
@@ -98,7 +99,7 @@ export const Form = ({ lang }) => {
       if (Array.isArray(fieldError) && fieldError.length > 0) {
         const errorMessage = fieldError[0];
 
-        errorModal(errorMessage);
+        errorModal(lang, errorMessage);
       }
     }
   };
@@ -150,7 +151,7 @@ export const Form = ({ lang }) => {
 
         // Set the error message in the component's state (optional)
         // setMessageError(errorMessage);
-        errorModal(errorMessage);
+        errorModal(lang, errorMessage);
       }
     }
   };
@@ -194,51 +195,73 @@ export const Form = ({ lang }) => {
   };
 
   return (
-    <div className='mb-[50px] md:mb-0 w-full md:w-[350px] bg-white flex flex-col items-center pt-[25px] px-[30px] pb-[30px] rounded-[15px]'>
-      <h2 className='text-center text-[#347AEC] font-unbounded text-[22px] font-[400] mb-[22px]'>
-        {!isLoginForm ? lang.login_page.form.header_sign_up : lang.login_page.form.header_login}
-      </h2>
-
-      <form className='w-[250px] flex flex-col items-center justify-between gap-[25px] py-[30px]'>
-        <Input
-          ref={emailRef}
-          type='email'
-          onChange={(e) => setEmail(e.target.value)}
-          className='w-full text-[12px] placeholder:text-[12px]'
-          placeholder={`${lang.login_page.form.email}*`}
-        />
-
-        {!isLoginForm && (
-          <Input
-            ref={firstnameRef}
-            type='firstname'
-            onChange={(e) => setFirstName(e.target.value)}
-            className='w-full text-[12px] placeholder:text-[12px]'
-            placeholder={`${lang.login_page.form.first_name}*`}
+    <div className='flex gap-[20px]'>
+      <div className='mb-[50px] xl:mb-0 w-full xl:w-[350px] bg-white flex flex-col items-center pt-[25px] px-[30px] pb-[30px] rounded-[15px]'>
+        <h2 className='text-center text-[#347AEC] font-unbounded text-[22px] font-[400]'>
+          {!isLoginForm ? lang.login_page.form.header_sign_up : lang.login_page.form.header_login}
+        </h2>
+        {messageError && (
+          <Alert
+            className='rounded-[0px] mt-[15px]'
+            message={messageError}
+            type='info'
+            closable
+            onClose={onCloseErrorAlert}
           />
         )}
-        <Input
-          ref={passwordRef}
-          type='password'
-          onChange={(e) => setPassword(e.target.value)}
-          className='w-full text-[12px] placeholder:text-[12px]'
-          placeholder={`${lang.login_page.form.password}*`}
-        />
-        {!isLoginForm && (
-          <>
+        <form className='w-[250px] flex flex-col items-center justify-between gap-[25px] py-[20px]'>
+          <Input
+            ref={emailRef}
+            type='email'
+            onChange={(e) => setEmail(e.target.value)}
+            className='w-full text-[12px] placeholder:text-[12px]'
+            placeholder={`${lang.login_page.form.email}*`}
+          />
+
+          {!isLoginForm && (
             <Input
-              ref={passwordRef}
-              type='password'
-              onChange={(e) => setRepeatedPassword(e.target.value)}
+              ref={firstnameRef}
+              type='firstname'
+              onChange={(e) => setFirstName(e.target.value)}
               className='w-full text-[12px] placeholder:text-[12px]'
-              placeholder={`${lang.login_page.form.re_password}*`}
+              placeholder={`${lang.login_page.form.first_name}*`}
             />
-            <MultipleSelect lang={lang} onChange={(value) => onChangeMultipleSelectScopes(value)} />
-          </>
-        )}
-        {!isLoginForm && (
+          )}
+          <Input
+            ref={passwordRef}
+            type='password'
+            onChange={(e) => setPassword(e.target.value)}
+            className='w-full text-[12px] placeholder:text-[12px]'
+            placeholder={`${lang.login_page.form.password}*`}
+          />
+          {!isLoginForm && (
+            <>
+              <Input
+                ref={passwordRef}
+                type='password'
+                onChange={(e) => setRepeatedPassword(e.target.value)}
+                className='w-full text-[12px] placeholder:text-[12px]'
+                placeholder={`${lang.login_page.form.re_password}*`}
+              />
+              <MultipleSelect
+                lang={lang}
+                onChange={(value) => onChangeMultipleSelectScopes(value)}
+              />
+            </>
+          )}
+
+          <MainButton
+            onClick={!isLoginForm ? handleRegistrationButton : handleLoginButton}
+            className='w-[200px] h-[40px] text-[12px]'
+            label={
+              !isLoginForm
+                ? lang.login_page.created_profile.register_btn
+                : lang.login_page.created_profile.login_btn
+            }
+          />
+        </form>
+        {isNotDesktop && !isLoginForm && (
           <Alert
-            className='mt-[20px]'
             message={
               <div className='px-[30px]'>
                 <ol className='list-disc'>
@@ -251,7 +274,9 @@ export const Form = ({ lang }) => {
                   </li>
                   <li
                     className={
-                      /^\S*$/.test(password) ? "line-through text-green-600" : "text-red-600"
+                      /^\S*$/.test(password) && password.length !== 0
+                        ? "line-through text-green-600"
+                        : "text-red-600"
                     }
                   >
                     {lang.login_page.handle_errors.alert_modal.password_spacing}
@@ -278,7 +303,11 @@ export const Form = ({ lang }) => {
                   </li>
                   <li
                     className={
-                      password === repeatedPassword ? "line-through text-green-600" : "text-red-600"
+                      password === repeatedPassword &&
+                      password.length !== 0 &&
+                      repeatedPassword.length !== 0
+                        ? "line-through text-green-600"
+                        : "text-red-600"
                     }
                   >
                     {lang.login_page.handle_errors.alert_modal.passwords_match}
@@ -289,30 +318,71 @@ export const Form = ({ lang }) => {
             type='warning'
           />
         )}
-
-        <MainButton
-          onClick={!isLoginForm ? handleRegistrationButton : handleLoginButton}
-          className='w-[200px] h-[40px] text-[12px]'
-          label={
-            !isLoginForm
-              ? lang.login_page.created_profile.register_btn
-              : lang.login_page.created_profile.login_btn
-          }
-        />
-      </form>
-      <button
-        className='text-[#347AEC] hover:text-[#6764E7] duration-500 mx-auto block mt-[15px] px-[20px] font-unbounded'
-        onClick={() => setIsLoginForm(!isLoginForm)}
-      >
-        {!isLoginForm ? `${lang.login_page.form.logged_in}` : `${lang.login_page.form.registered}`}
-      </button>
-      {messageError && (
+        <button
+          className='text-[#347AEC] hover:text-[#6764E7] duration-500 mx-auto block mt-[15px] px-[20px] font-unbounded'
+          onClick={() => setIsLoginForm(!isLoginForm)}
+        >
+          {!isLoginForm
+            ? `${lang.login_page.form.logged_in}`
+            : `${lang.login_page.form.registered}`}
+        </button>
+      </div>
+      {!isNotDesktop && !isLoginForm && (
         <Alert
-          className='mt-[30px] md:mt-[15px] rounded-[0px]'
-          message={messageError}
-          type='info'
-          closable
-          onClose={onCloseErrorAlert}
+          message={
+            <div className='px-[30px]'>
+              <ol className='list-disc'>
+                <li
+                  className={
+                    /^.{8,16}$/.test(password) ? "line-through text-green-600" : "text-red-600"
+                  }
+                >
+                  {lang.login_page.handle_errors.alert_modal.password_length}
+                </li>
+                <li
+                  className={
+                    /^\S*$/.test(password) && password.length !== 0
+                      ? "line-through text-green-600"
+                      : "text-red-600"
+                  }
+                >
+                  {lang.login_page.handle_errors.alert_modal.password_spacing}
+                </li>
+                <li
+                  className={
+                    /^(?=.*[A-Z]).*$/.test(password)
+                      ? "line-through text-green-600"
+                      : "text-red-600"
+                  }
+                >
+                  {lang.login_page.handle_errors.alert_modal.password_uppercase}
+                </li>
+                <li
+                  className={
+                    /^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).*$/.test(password)
+                      ? "line-through text-green-600"
+                      : "text-red-600"
+                  }
+                >
+                  {lang.login_page.handle_errors.alert_modal.password_spec_key}
+                  <br />
+                  (!@#$%^&*)
+                </li>
+                <li
+                  className={
+                    password === repeatedPassword &&
+                    password.length !== 0 &&
+                    repeatedPassword.length !== 0
+                      ? "line-through text-green-600"
+                      : "text-red-600"
+                  }
+                >
+                  {lang.login_page.handle_errors.alert_modal.passwords_match}
+                </li>
+              </ol>
+            </div>
+          }
+          type='warning'
         />
       )}
     </div>

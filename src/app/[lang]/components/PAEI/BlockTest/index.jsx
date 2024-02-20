@@ -54,7 +54,7 @@ const BlockTest = ({
       <p className='md:hidden text-[14px] text-[#262626] font-unbounded font-[400]'>{test_name}</p>
       <div className='flex justify-between items-center py-[14px] px-[19px] bg-white rounded-[5px]'>
         <p className='hidden md:block text-[#262626] font-unbounded font-[400]'>{test_name}</p>
-        <div className='flex gap-[50px] md:gap-[50px]'>
+        <div className='flex gap-[50px] xl:gap-[50px]'>
           {BUTTONS_PARAMS?.map?.((button, _) => {
             const isDisabled =
               counter - currentTabButton + button.number > 10 ||

@@ -108,16 +108,11 @@ export const Enneagrama = ({ lang }) => {
     <div className='max-w-[842px] h-auto mt-[15px]'>
       <div className='text-end w-full flex justify-between'>
         <MainButton
-          className='md:w-[120px] md:mr-[10px] h-[30px]'
+          className='font-montserrat lg:w-[120px] mr-[10px] h-[30px]'
           label={lang.enneagram_block.back_btn}
           onClick={showModal}
         />
-        <QuestionsCounter
-          className='w-[250px] md:w-auto'
-          current={currentQuestion}
-          general={generalQuestions}
-          lang={lang}
-        />
+        <QuestionsCounter current={currentQuestion} general={generalQuestions} lang={lang} />
       </div>
       <div className='mt-[10px] mb-[20px]'>
         <QuestionsSection
@@ -129,29 +124,29 @@ export const Enneagrama = ({ lang }) => {
         />
       </div>
       {currentQuestion !== generalQuestions && (
-        <div className='w-full flex flex-col md:flex-row items-center justify-between gap-[16px]'>
+        <div className='w-full flex flex-col lg:flex-row items-center justify-between gap-[16px]'>
           <EnneagramaButton
             disabled={currentQuestion === generalQuestions ? true : false}
-            className='w-full md:w-[270px] h-[40px] md:h-[50px]'
+            className='w-full lg:w-[270px] h-[40px] lg:h-[50px]'
             onClick={() => handleSubmit("Yes")}
             label={lang.enneagram_block.yes_btn}
           />
           <EnneagramaButton
             disabled={currentQuestion === generalQuestions ? true : false}
-            className='w-full md:w-[270px] h-[40px] md:h-[50px]'
+            className='w-full lg:w-[270px] h-[40px] lg:h-[50px]'
             onClick={() => handleSubmit("No")}
             label={lang.enneagram_block.yes_no_btn}
           />
           <EnneagramaButton
             disabled={currentQuestion === generalQuestions ? true : false}
-            className='w-full md:w-[270px] h-[40px] md:h-[50px]'
+            className='w-full lg:w-[270px] h-[40px] lg:h-[50px]'
             onClick={() => handleSubmit("No")}
             label={lang.enneagram_block.no_btn}
           />
         </div>
       )}
 
-      <div className='mb-[50px] md:mb-0 flex justify-evenly mt-[20px] w-[300px] mx-auto'>
+      <div className='mb-[50px] xl:mb-0 flex justify-evenly mt-[20px] w-[300px] mx-auto'>
         {currentQuestion > 0 && currentQuestion !== generalQuestions && (
           <NextPrevButton
             className='previous-block block-button bg-transparent w-[140px] h-[17px] text-[#000] hover:bg-transparent hover:font-bold'
@@ -183,7 +178,7 @@ export const Enneagrama = ({ lang }) => {
         className='w-[800px] h-[360px]'
         open={isModalOpen}
         width={!isMobile ? 800 : 350}
-        height={360}
+        height={380}
         footer={[]}
         closable={true}
         onCancel={() => setIsModalOpen(false)}
@@ -195,17 +190,17 @@ export const Enneagrama = ({ lang }) => {
             alt={"robot look"}
             loading='lazy'
           />
-          <div className='md:ml-[50px]'>
-            <h1 className='text-center md:text-left text-[30px] md:text-[42px] font-unbounded'>
+          <div className='lg:ml-[50px]'>
+            <h1 className='text-center lg:text-left text-[26px] lg:text-[42px] font-unbounded'>
               {lang.enneagram_block.modal_window_h1}
             </h1>
-            <p className='text-center md:text-left text-[18px] font-normal font-montserrat leading-[130%] w-[300px] md:w-[350px] mb-[20px] md:mb-[50px]'>
+            <p className='text-center xl:text-left text-[18px] font-normal font-montserrat leading-[130%] w-full lg:w-[350px] mb-[20px] lg:mb-[50px]'>
               {lang.enneagram_block.modal_window_p}
             </p>
-            <div className='flex items-center flex-col gap-[10px] md:flex-row md:w-[500px]'>
+            <div className='flex items-center flex-col gap-[10px] md:flex-row lg:w-[500px]'>
               <EnneagramaButton
                 onClick={handleLeavePage}
-                className='w-[209px] h-[38px] md:mr-[15px] bg-[#7DACF1]'
+                className='w-[209px] h-[38px] lg:mr-[15px] bg-[#7DACF1]'
                 label={lang.enneagram_block.modal_leave_btn}
               />
               <EnneagramaButton

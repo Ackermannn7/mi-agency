@@ -1,8 +1,10 @@
 "use client";
+import { useScreenSize } from "@/hooks/useScreenSize";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const GreatingBlock = ({ lang }) => {
+  const { isNotDesktop } = useScreenSize();
   const [imageSrc, setImageSrc] = useState(null);
   useEffect(() => {
     const loadImage = async () => {
@@ -18,21 +20,20 @@ const GreatingBlock = ({ lang }) => {
   }, []);
 
   return (
-    <section className='flex flex-col md:flex-row items-center md:items-start gap-[40px] pt-[0px] md:pt-[60px]'>
+    <section className='flex flex-col xl:flex-row items-center xl:items-start gap-[40px] pt-[0px] xl:pt-[60px]'>
       <div className='relative'>
         {imageSrc && (
           <Image
             className='relative z-10'
             src={imageSrc}
             alt={"hello world"}
-            width={156}
-            height={207}
+            width={140}
+            height={isNotDesktop ? 160 : 180}
           />
         )}
-        <div className='absolute top-[45px] left-0 w-[150px] h-[150px] bg-gradient-to-r from-[#347AEC] to-[#6764E7] rounded-[50%]'></div>
       </div>
-      <div className='md:border-solid md:border-4 md:border-[#4485ED] rounded-[15px] md:pt-[16px] md:px-[31px] md:pb-[19px]'>
-        <div className='max-w-[570px] w-full flex flex-col gap-[10px]'>
+      <div className='xl:border-solid xl:border-4 xl:border-[#4485ED] rounded-[15px] xl:pt-[16px] xl:px-[19px] xl:pb-[19px] max-w-[1280px] w-full xl:w-[70%]'>
+        <div className=' md:px-[10px]  flex flex-col gap-[10px]'>
           <p className='text-[#4485ED] font-[500] text-[18px]'>{lang.greatings_block.greating}</p>
           <p className='font-[500] leading-5 tracking-normal'>
             {lang.greatings_block.description_1}

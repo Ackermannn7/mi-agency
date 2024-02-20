@@ -31,14 +31,14 @@ export const tests = (lang) => {
         children: (
           <section className='flex flex-col items-start gap-[20px] mb-[50px]'>
             <PAEIDescription lang={lang} />
-            <div className='flex items-center gap-[27px] mt-[10px] md:mt-0'>
-              <div className='relative border border-solid border-2 border-[#347AEC] py-[15px] px-[24px] max-w-[595px] rounded-[15px]'>
+            <div className='flex items-center gap-[27px] mt-[10px] xl:mt-0'>
+              <div className='relative border border-solid border-2 border-[#347AEC] py-[15px] px-[24px] max-w-[800px] md:mx-auto w-full rounded-[15px]'>
                 <div className='text-[#262626] leading-[130%]'>
                   <p className='font-[500] mb-[10px]'>{lang.paei_page.robot_hint_p}</p>
                   <h3 className='font-[700]'>{lang.paei_page.robot_hint_h3}</h3>
                 </div>
               </div>
-              <div className='hidden md:block -scale-x-100'>
+              <div className='hidden xl:block -scale-x-100'>
                 <Image
                   className='w-[150px] h-[200px]'
                   src={robotLookImg}
@@ -56,7 +56,7 @@ export const tests = (lang) => {
       label: lang.enneagram_page.title,
       type: "eneagrama",
       description: "Психологічна модель, що описує 9 глибинних...",
-      banner: "enneagram_banner.png",
+      banner: "enneagram.png",
       owner: {
         type: "image",
         path: "logo_owner.png",
@@ -65,22 +65,21 @@ export const tests = (lang) => {
       page: {
         title: lang.enneagram_page.title,
         description: (
-          <p className='font-[500] leading-[130%]'>
+          <p className='font-[500] leading-[130%] max-w-full xl:w-[80%]'>
             <span className='text-[#262626] font-[700]'>{lang.enneagram_page.title}</span>{" "}
-            {lang.enneagram_page.description_1}
-            <br /> {lang.enneagram_page.description_2} <br />
+            {lang.enneagram_page.description}
           </p>
         ),
         children: (
           <section>
-            <div className='flex flex-col-reverse md:flex-row items-center gap-[27px]'>
+            <div className='flex flex-col-reverse lg:flex-row items-center gap-[27px]'>
               <Image
-                className='hidden md:block w-[150px] h-[200px]'
+                className='hidden lg:block w-[150px] h-[200px]'
                 src={robotLookImg}
                 alt={"robot look"}
                 loading='lazy'
               />
-              <div className='w-full md:w-[400px] relative md:border md:border-solid md:border-2 md:border-[#347AEC] py-[15px] md:px-[24px] w-[369px] rounded-[15px]'>
+              <div className='w-full lg:w-[400px] relative lg:border lg:border-solid lg:border-2 lg:border-[#347AEC] py-[15px] lg:px-[24px] w-[369px] rounded-[15px]'>
                 <div className='text-[#262626] leading-[130%]'>
                   <p className='font-[500] mb-[10px]'>{lang.enneagram_page.robot_hint_p}</p>
                   <h3 className='font-[700]'>{lang.enneagram_page.robot_hint_h3}</h3>

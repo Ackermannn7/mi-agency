@@ -13,7 +13,7 @@ const User = ({
   lang,
 }) => {
   return (
-    <div className='hidden md:flex md:gap-[10px]'>
+    <div className='hidden xl:flex xl:gap-[10px]'>
       <Default
         userData={userData}
         //  user={user}

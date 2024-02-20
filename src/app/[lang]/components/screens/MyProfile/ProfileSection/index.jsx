@@ -20,17 +20,16 @@ export const ProfileSection = ({ lang }) => {
 
       try {
         // Use ky to make a request with the auth token in the headers
-        const response = await axios
-          .get(
-            `https://psymi.com.ua/${lang.backend_locale}/api/test-results/me/`,
-            {
-              headers: {
-                Authorization: `Token ${authToken}`,
-                "Content-Type": "application/json",
-              },
-            }
-          )
-          
+        const response = await axios.get(
+          `https://psymi.com.ua/${lang.backend_locale}/api/test-results/me/`,
+          {
+            headers: {
+              Authorization: `Token ${authToken}`,
+              "Content-Type": "application/json",
+            },
+          },
+        );
+
         // Set the user data in the component state
         setUserTests(response.data);
       } catch (error) {
@@ -47,16 +46,14 @@ export const ProfileSection = ({ lang }) => {
   }
 
   return (
-    <section className="mt-[35px] mb-[35px] md:mb-0">
+    <section className='mt-[35px] mb-[70px] xl:mb-0'>
       {userTests?.length === 0 ? (
-        <div className="text-center md:text-left">
-          <h2 className=" px-[20px] md:px-0 font-unbounded text-[22px] font-[400] mb-[15px]">
+        <div className='text-center xl:text-left'>
+          <h2 className=' px-[20px] xl:px-0 font-unbounded text-[22px] font-[400] mb-[15px]'>
             {lang.profile_page.header}
           </h2>
-          <MainButton className="text-[14px] px-[15px] font-[300]">
-            <Link href={`/${lang.locale}/get-tested/`}>
-              {lang.profile_page.get_tested_btn}
-            </Link>
+          <MainButton className='text-[14px] px-[15px] font-[300]'>
+            <Link href={`/${lang.locale}/get-tested/`}>{lang.profile_page.get_tested_btn}</Link>
           </MainButton>
         </div>
       ) : (

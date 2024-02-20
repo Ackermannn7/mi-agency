@@ -29,7 +29,6 @@ export const PAEI = ({ lang }) => {
     const storedPAEIAnswers = localStorage.getItem("paeiAnswers");
     return storedPAEIAnswers ? JSON.parse(storedPAEIAnswers) : [];
   });
-  console.log(answers);
 
   useEffect(() => {
     // Зберігаємо дані в локальному сховищі
@@ -200,14 +199,14 @@ export const PAEI = ({ lang }) => {
   }, []);
   return (
     <>
-      <div className=' w-[100%] md:mt-0 flex md:gap-[96px] max-w-[780px]  justify-between'>
+      <div className='w-full xl:mt-0 flex xl:gap-[96px] max-w-[780px]  justify-between'>
         <div className='text-[16px]'>
-          <div className='flex items-center justify-start md:justify-end gap-[50px] md:gap-[50px] max-w-[545px] w-full pl-[22px] md:pl-0 md:pr-[19px] mb-[12px]'>
+          <div className='flex items-center justify-start md:justify-end gap-[50px] xl:gap-[50px] max-w-[545px] w-full pl-[22px] md:pl-0 md:pr-[19px] mb-[12px]'>
             {new Array(4).fill(null).map((_, i) => (
               <div className='text-[#5D5D5D] font-[600]'>{i + 1}</div>
             ))}
           </div>
-          <div className='min-w-[200px] w-[100%] md:w-[545px] flex flex-col gap-[10px] md:gap-[20px]'>
+          <div className='min-w-[200px] w-[100%] md:w-[500px] xl:w-[545px] flex flex-col gap-[10px] xl:gap-[20px]'>
             {Array.isArray(currentBlock) &&
               currentBlock.map(
                 (test, index) =>
@@ -227,8 +226,9 @@ export const PAEI = ({ lang }) => {
                     />
                   ),
               )}
+            {/* FOR DESKTOP */}
             <div className='flex flex-col'>
-              <div className='hidden md:flex justify-end mt-[20px]'>
+              <div className='hidden xl:flex justify-end mt-[20px]'>
                 {currentBlockID > 1 && (
                   <NextPrevButton
                     className='previous-block block-button bg-transparent w-[140px] h-[17px] text-black hover:bg-transparent hover:font-bold'
@@ -266,7 +266,7 @@ export const PAEI = ({ lang }) => {
                       });
                     }, 200);
                   }}
-                  className='hidden md:flex items-center justify-center flex-col gap-[5px] w-full py-[26px] font-medium'
+                  className='hidden xl:flex items-center justify-center flex-col gap-[5px] w-full py-[26px] font-medium'
                 >
                   <span className='text-[#262626] text-center font-unbounded text-[16px] '>
                     {lang.paei_page.get_result_btn}
@@ -280,7 +280,7 @@ export const PAEI = ({ lang }) => {
                   >
                     <path
                       fill-rule='evenodd'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                       d='M0.219168 0.375342C0.564178 -0.0559202 1.19347 -0.125842 1.62473 0.219168L11 7.71941L20.3753 0.219168C20.8066 -0.125842 21.4359 -0.0559202 21.7809 0.375342C22.1259 0.806604 22.056 1.4359 21.6247 1.78091L11 10.2807L0.375342 1.78091C-0.0559202 1.4359 -0.125842 0.806604 0.219168 0.375342Z'
                       fill='#262626'
                     />
@@ -290,23 +290,24 @@ export const PAEI = ({ lang }) => {
             </div>
           </div>
         </div>
-        <div className='flex flex-col justify-evenly md:block text-center font-unbounded text-[#262626] items-center'>
-          <p className='hidden md:block font-normal mb-[40px]'>{lang.paei_page.passed_blocks}</p>
-          <div className='md:mb-[60px] text-center w-[100%]'>
-            <p className='text-2xl md:text-4xl font-medium  bg-gradient-to-r from-[#4485ED] to-[#6764E7] text-transparent bg-clip-text'>
+        <div className='flex flex-col justify-evenly xl:block text-center font-unbounded text-[#262626] items-center'>
+          <p className='hidden xl:block font-normal mb-[40px]'>{lang.paei_page.passed_blocks}</p>
+          <div className='xl:mb-[60px] text-center w-[100%]'>
+            <p className='text-2xl xl:text-4xl font-medium  bg-gradient-to-r from-[#4485ED] to-[#6764E7] text-transparent bg-clip-text'>
               {currentBlockID} / 10
             </p>
             <span className='text-[#5D5D5D] text-[16px]'>{lang.paei_page.blocks}</span>
           </div>
-          <div className='md:mb-[60px] text-center w-[100%]'>
-            <p className='text-2xl md:text-4xl font-medium  bg-gradient-to-r from-[#4485ED] to-[#6764E7] text-transparent bg-clip-text'>
+          <div className='xl:mb-[60px] text-center w-[100%]'>
+            <p className='text-2xl xl:text-4xl font-medium  bg-gradient-to-r from-[#4485ED] to-[#6764E7] text-transparent bg-clip-text'>
               {counter} / 10
             </p>
             <span className='text-[#5D5D5D] text-[16px]'> {lang.paei_page.points}</span>
           </div>
         </div>
       </div>
-      <div className='w-full flex md:hidden flex-col pb-[30px]'>
+      {/* FOR MOBILE & TABLET */}
+      <div className='w-full flex xl:hidden flex-col pb-[30px]'>
         <div className='flex justify-evenly'>
           {currentBlockID > 1 && (
             <NextPrevButton
@@ -344,7 +345,7 @@ export const PAEI = ({ lang }) => {
                 });
               }, 200);
             }}
-            className='flex items-center justify-center flex-col gap-[5px] w-full pt-[26px] md:py-[26px] font-medium'
+            className='flex items-center justify-center flex-col gap-[5px] w-full pt-[26px] xl:py-[26px] font-medium'
           >
             <span className='text-[#262626] text-center font-unbounded text-[16px] '>
               {lang.paei_page.get_result_btn}
@@ -358,7 +359,7 @@ export const PAEI = ({ lang }) => {
             >
               <path
                 fill-rule='evenodd'
-                clip-rule='evenodd'
+                clipRule='evenodd'
                 d='M0.219168 0.375342C0.564178 -0.0559202 1.19347 -0.125842 1.62473 0.219168L11 7.71941L20.3753 0.219168C20.8066 -0.125842 21.4359 -0.0559202 21.7809 0.375342C22.1259 0.806604 22.056 1.4359 21.6247 1.78091L11 10.2807L0.375342 1.78091C-0.0559202 1.4359 -0.125842 0.806604 0.219168 0.375342Z'
                 fill='#262626'
               />

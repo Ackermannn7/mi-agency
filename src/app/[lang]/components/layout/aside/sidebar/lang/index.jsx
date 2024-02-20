@@ -8,13 +8,13 @@ import { usePathname } from "next/navigation";
 import { useScreenSize } from "@/hooks/useScreenSize";
 export const Lang = ({ lang }) => {
   const pathName = usePathname();
-  const { isMobile } = useScreenSize();
+  const { isNotDesktop } = useScreenSize();
   const [activeLang, setActiveLang] = useState(pathName.split("/")[1]);
   return (
     <div className='flex items-center gap-[10px]'>
       {langList
         .filter((el) => {
-          return isMobile ? el.key === activeLang : true;
+          return isNotDesktop ? el.key === activeLang : true;
         })
         ?.map?.((l, _) => (
           <ItemLang
@@ -24,7 +24,7 @@ export const Lang = ({ lang }) => {
             setActiveLang={setActiveLang}
             data={l}
             pathName={pathName}
-            isMobile={isMobile}
+            isMobile={isNotDesktop}
           />
         ))}
     </div>

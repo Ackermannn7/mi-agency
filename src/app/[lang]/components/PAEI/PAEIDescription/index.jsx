@@ -22,16 +22,16 @@ export const PAEIDescription = ({ lang }) => {
   }, []); // Пустой массив зависимостей означает, что useEffect выполняется только один раз при монтировании
 
   return (
-    <div className='max-w-[595px] w-full flex flex-row-reverse justify-between relative'>
+    <div className='max-w-[1000px] w-full flex justify-between relative'>
       <button className='absolute right-0' onClick={toggleAccordion}>
         {isOpen ? (
           <MainButton
-            className='text-[14px] md:text-[16px]'
+            className='text-[14px] xl:text-[16px]'
             label={lang.paei_description.hide_btn}
           />
         ) : (
           <MainButton
-            className='text-[14px] md:text-[16px]'
+            className='text-[14px] xl:text-[16px]'
             label={lang.paei_description.show_btn}
           />
         )}
@@ -39,13 +39,13 @@ export const PAEIDescription = ({ lang }) => {
       <div
         ref={contentRef}
         style={{ maxHeight: height }}
-        className={`transition-max-height duration-300 ease-in-out overflow-hidden flex flex-col justify-between`}
+        className={`w-full transition-max-height duration-300 ease-in-out overflow-hidden flex flex-col justify-between`}
       >
         <div className='flex items-start gap-[15px] mb-[30px]'>
-          <p className='text-center min-w-[80px] md:min-w-[100px] font-unbounded bg-gradient-to-r from-[#347AEC] to-[#6764E7] inline-block text-transparent bg-clip-text text-7xl md:text-8xl font-semibold'>
+          <p className='text-center min-w-[80px] xl:min-w-[100px] font-unbounded bg-gradient-to-r from-[#347AEC] to-[#6764E7] inline-block text-transparent bg-clip-text text-7xl xl:text-8xl font-semibold'>
             P
           </p>
-          <div className='max-w-[456px] pt-[10px]'>
+          <div className='max-w-[700px] pt-[10px]'>
             <h5 className='font-unbounded text-[#262626] uppercase font-[500]'>
               {lang.paei_description.p_header}
             </h5>
@@ -55,10 +55,10 @@ export const PAEIDescription = ({ lang }) => {
           </div>
         </div>
         <div className='flex items-start gap-[15px] mb-[30px]'>
-          <p className='text-center min-w-[80px] md:min-w-[100px] font-unbounded bg-gradient-to-r from-[#347AEC] to-[#6764E7] inline-block text-transparent bg-clip-text text-7xl md:text-8xl font-semibold'>
+          <p className='text-center min-w-[80px] xl:min-w-[100px] font-unbounded bg-gradient-to-r from-[#347AEC] to-[#6764E7] inline-block text-transparent bg-clip-text text-7xl xl:text-8xl font-semibold'>
             А
           </p>
-          <div className='max-w-[456px] pt-[10px]'>
+          <div className='max-w-[700px] pt-[10px]'>
             <h5 className='font-unbounded text-[#262626] uppercase font-[500]'>
               {lang.paei_description.a_header}
             </h5>
@@ -68,10 +68,10 @@ export const PAEIDescription = ({ lang }) => {
           </div>
         </div>
         <div className='flex items-start gap-[15px] mb-[30px]'>
-          <p className='text-center min-w-[80px] md:min-w-[100px] font-unbounded bg-gradient-to-r from-[#347AEC] to-[#6764E7] inline-block text-transparent bg-clip-text text-7xl md:text-8xl font-semibold'>
+          <p className='text-center min-w-[80px] xl:min-w-[100px] font-unbounded bg-gradient-to-r from-[#347AEC] to-[#6764E7] inline-block text-transparent bg-clip-text text-7xl xl:text-8xl font-semibold'>
             E
           </p>
-          <div className='max-w-[456px] pt-[10px]'>
+          <div className='max-w-[700px] pt-[10px]'>
             <h5 className='font-unbounded text-[#262626] uppercase font-[500]'>
               {lang.paei_description.e_header}
             </h5>
@@ -81,10 +81,10 @@ export const PAEIDescription = ({ lang }) => {
           </div>
         </div>
         <div className='flex items-start gap-[15px] mb-[30px]'>
-          <p className='text-center min-w-[80px] md:min-w-[100px] font-unbounded bg-gradient-to-r from-[#347AEC] to-[#6764E7] inline-block text-transparent bg-clip-text text-7xl md:text-8xl font-semibold'>
+          <p className='text-center min-w-[80px] xl:min-w-[100px] font-unbounded bg-gradient-to-r from-[#347AEC] to-[#6764E7] inline-block text-transparent bg-clip-text text-7xl xl:text-8xl font-semibold'>
             I
           </p>
-          <div className='max-w-[456px] pt-[10px]'>
+          <div className='max-w-[700px] pt-[10px]'>
             <h5 className='font-unbounded text-[#262626] uppercase font-[500]'>
               {lang.paei_description.i_header}
             </h5>

@@ -23,7 +23,7 @@ export default async function RootLayout({ children, params }) {
         className={
           Mont.className +
           " " +
-          "min-h-screen pt-[30px] pb-[50px] px-[20px] md:px-[70px] bg-[#F2F5F8] relative"
+          "min-h-screen pt-[30px] pb-[50px] px-[20px] md:px-[40px] lg:px-[70px] bg-[#F2F5F8] relative"
         }
       >
         <ToastContainer
@@ -32,13 +32,13 @@ export default async function RootLayout({ children, params }) {
         />
         <main>
           <Providers>
-            <div className='md:mb-[12px] ml-[5px] md:fixed'>
+            <div className='xl:mb-[12px] xl:fixed'>
               <Logo lang={lang} />
             </div>
-            <div className='fixed z-50 left-0 right-0 bottom-0 md:left-[70px] md:right-auto md:bottom-auto md:top-[90px]'>
+            <div className='fixed z-50 left-0 right-0 bottom-0 xl:left-[70px] xl:right-auto xl:bottom-auto xl:top-[90px]'>
               <Sidebar lang={lang} />
             </div>
-            <div className='md:pl-[350px]'>{children}</div>
+            <div className='xl:ml-[270px] 2xl:ml-[350px]'>{children}</div>
           </Providers>
         </main>
       </body>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const ItemNav = ({ data, setCurrentTab, currentTab }) => {
-  const { isMobile } = useScreenSize();
+  const { isNotDesktop } = useScreenSize();
   const pathname = usePathname();
   const segments = pathname.replace(/^\/|\/$/g, "").split("/");
   const slug = segments.length > 1 ? segments.pop() : "";
@@ -13,13 +13,13 @@ export const ItemNav = ({ data, setCurrentTab, currentTab }) => {
       <Link
         href={`/${data.locale}${data.href}`}
         prefetch={false}
-        className='flex flex-col text-center md:flex-row items-center gap-[7px] md:gap-[14px] item-nav'
+        className='flex flex-col text-center xl:flex-row items-center gap-[7px] xl:gap-[14px] item-nav'
       >
         <span
-          className={`w-[35px] h-[35px] md:w-[21px] md:h-[21px] rounded-[100%] flex items-center justify-center ${
+          className={`w-[35px] h-[35px] xl:w-[21px] xl:h-[21px] rounded-[100%] flex items-center justify-center ${
             data.slug === slug ? "bg-[#347AEC] nav active-nav" : "nav bg-[#F2F5F8]"
           } ${
-            isMobile &&
+            isNotDesktop &&
             data?.label.key === "get-tested" &&
             "bg-gradient-to-r from-[#347AEC] to-[#6764E7] nav active-nav"
           } `}
@@ -38,7 +38,7 @@ export const ItemNav = ({ data, setCurrentTab, currentTab }) => {
             data.icon
           )}
         </span>
-        <p className='text-[9px] md:text-[16px] w-[50px] md:w-auto'>
+        <p className='text-[9px] xl:text-[16px] w-[50px] xl:w-auto'>
           {data.label && Object.values(data.label)[1]}
         </p>
       </Link>

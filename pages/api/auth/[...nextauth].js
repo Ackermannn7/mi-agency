@@ -22,9 +22,7 @@ export const authOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error(
-            "Please check the correctness of the data you entered"
-          );
+          throw new Error("Please check the correctness of the data you entered");
         }
 
         const user = await client.user.findUnique({
@@ -35,14 +33,11 @@ export const authOptions = {
 
         if (!user || !user?.password) {
           throw new Error(
-            "The user does not exist, please check the correctness of the data you entered"
+            "The user does not exist, please check the correctness of the data you entered",
           );
         }
 
-        const isCorrectPassword = await bcrypt.compare(
-          credentials.password,
-          user.password
-        );
+        const isCorrectPassword = await bcrypt.compare(credentials.password, user.password);
 
         if (!isCorrectPassword) {
           throw new Error("You have entered a wrong password");

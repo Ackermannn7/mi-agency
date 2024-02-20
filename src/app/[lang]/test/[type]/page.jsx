@@ -20,19 +20,13 @@ export default async function Page(context) {
   const lang = await getDictionary(params.lang);
   const data = await getData(params.type, lang);
   return (
-    <main className="pt-[20px] md:pt-[60px]">
+    <main className='pt-[20px] xl:pt-[60px]'>
       <h1
-        className={
-          Unbound.className +
-          " " +
-          "text-[#262626] text-[22px]  md:text-[40px] font-[400]"
-        }
+        className={Unbound.className + " " + "text-[#262626] text-[22px] xl:text-[40px] font-[400]"}
       >
         {data.label}
       </h1>
-      <div className="pb-[35px] pt-[10px] md:pt-[20px]">
-        {data.page.description}
-      </div>
+      <div className='pb-[35px] pt-[10px] xl:pt-[20px]'>{data.page.description}</div>
       <div>{data.page.children}</div>
     </main>
   );

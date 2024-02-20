@@ -164,29 +164,28 @@
   },
   "paei_result": {
     "header": "YOUR PAEI:",
-    "p_description_uppercase": "The function of producing results is developed at a high level. Such a manager not only understands what needs to be done, but also has sufficient focus to translate an idea into a finished product that will satisfy the needs of customers. Also, the manager is characterized by high efficiency, focus on the final result, pragmatism and the ability to effectively perform several tasks at the same time.",
-    "p_description_lowercase": "The function of producing results is developed at a sufficient level, the manager can cope with the function of producing results at a satisfactory level to understand what actions need to be taken to achieve the result.",
-    "p_noDescription": "The function of producing results is weakly expressed, such a manager cannot ensure the performance of tasks at a high level, it is difficult to complete the work.",
-    "a_description_uppercase": "The function of the administrator is developed at a high level. Such a manager brilliantly copes with the organization of the work environment, planning, management and control of the company's resources. He takes the necessary actions at the right time, in a certain sequence, thereby preparing the ground for the production of results.",
-    "a_description_lowercase": "The administration function is expressed at an acceptable level in order to control the current state of affairs and tasks.",
-    "a_noDescription": "The administration function is weakly expressed, such a manager has difficulties in setting clear tasks for other people, he does not have a clear plan of action that could ensure effective coordination, control and tracking of processes. Such a manager does not pay attention to details and cannot systematize the company's work .",
-    "e_description_uppercase": "The function of entrepreneurship is expressed at a high level. Such a manager has an analytical mindset that allows him to analyze changes in the environment, understand the importance of strategic planning and actions aimed at long-term results. His creativity helps to create a vision for the company that will make it successful in the long term, but he begins to work on its achievement immediately.",
-    "e_description_lowercase": "The function of entrepreneurship is expressed at a satisfactory level to understand the importance of strategic planning and actions aimed at achieving long-term goals.",
-    "e_noDescription": "The manager's entrepreneurial function is not expressed, it is difficult to perform tasks related to forecasting, long-term strategy and creative approach.",
-    "i_description_uppercase": "The function of integration is expressed at a high level, what can we say about leadership abilities and the ability to empathize. Such a manager focuses on creating common values, traditions, it is important for him as a formed team, he does a brilliant job of creating an atmosphere of mutual respect and interaction in the company. He directs your creative thinking to bring together people with different motives and interests to achieve a common goal.",
-    "i_description_lowercase": "The integration function is developed at a satisfactory level to adhere to the common goal, but the motivation, coordination and maintenance of team commitment are better entrusted to an employee with a pronounced I-style.",
-    "i_noDescription": "The integration function is very poorly developed, it is difficult to follow common goals, motivate, coordinate and maintain team commitment, it is better to entrust an employee with a pronounced I-style.",
+    "p_description_uppercase": "Production function is highly developed. Such a manager not only understands what needs to be done but also has sufficient determination to turn the idea into a finished product that meets the needs of customers. Additionally, the manager is characterized by high efficiency, focus on the end result, pragmatism, and the ability to effectively handle multiple tasks simultaneously.",
+    "p_description_lowercase": "Production function is developed at a sufficient level. The manager can handle the production function satisfactorily to understand the actions needed to achieve the result.",
+    "p_noDescription": "Production function is weakly expressed. Such a manager cannot ensure tasks are completed at a high level, making it difficult to bring work to completion.",
+    "a_description_uppercase": "Administrative function is highly developed. Such a manager excels in organizing the work environment, planning, managing, and controlling the company's resources. They take necessary actions at the right time and in a specific sequence, laying the groundwork for producing results.",
+    "a_description_lowercase": "Administrative function is expressed at an acceptable level to control the current state of affairs and tasks.",
+    "a_noDescription": "Administrative function is weakly expressed. This manager has difficulty setting clear tasks for others, lacks a clear plan of action to ensure effective coordination, control, and monitoring of processes. They do not pay attention to details and cannot systematize the company's work.",
+    "e_description_uppercase": "Entrepreneurial function is expressed at a high level. This manager has analytical thinking that allows them to analyze environmental changes, understand the importance of strategic planning and actions aimed at long-term results. Their creativity helps create a vision for the company that will make it successful in the long run, and they start working on achieving it immediately.",
+    "e_description_lowercase": "Entrepreneurial function is expressed at a satisfactory level to understand the importance of strategic planning and actions aimed at long-term goal achievement.",
+    "e_noDescription": "Entrepreneurial function is not expressed in the manager, making it difficult to perform tasks related to forecasting, long-term strategy, and creative approach.",
+    "i_description_uppercase": "Integration function is expressed at a high level, indicating leadership abilities and the ability to empathize. Such a manager is focused on creating common values and traditions. The formed team is essential to them, and they excel at creating an atmosphere of mutual respect and interaction within the company. They direct their creative thinking to unite people with different motives and interests to achieve a common goal.",
+    "i_description_lowercase": "Integration function is developed at a satisfactory level to adhere to common goals, but motivation, coordination, and team support are better delegated to a team member with a pronounced I-style.",
+    "i_noDescription": "Integration function is very weakly developed, making it difficult to follow common goals, motivate, coordinate, and maintain team favor, better delegated to a team member with a pronounced I-style.",
     "save_button": "Save result",
     "saved_result_msg": "The result is saved in the personal account"
   },
   "enneagram_page": {
     "title": "Enneagram",
-    "description_1": " is a psychological model describing 9 deep motives ",
-    "description_2": "which manage us on a subconscious level.",
+    "description": " is a psychological model describing 9 deep motives which manage us on a subconscious level.",
     "robot_hint_p": "Each of the 9 motives gives rise to a very specific character, with its own mental strategies, emotional reactions and life attitudes.",
     "robot_hint_h3": "To determine your Ennea type, take the test",
     "n_type": "type",
-    "lifeCreed": "Life creed: ",
+    "lifeMotto": "Life motto: ",
     "keyword": "Keyword: ",
     "careerOrientations": "Career orientations: ",
     "possibleProfessions": "Possible professions: ",
@@ -302,7 +301,7 @@
     "type_1": {
       "title": "Perfectionist",
       "description": "People of the first type are very reliable, meticulous, principled, and structured. They are ethical and idealistic, striving for perfection in everything. Perfectionists live by rules and control their emotions.",
-      "lifeCreed": "I know how to do everything right, and I will teach.",
+      "lifeMotto": "I know how to do everything right, and I will teach.",
       "keyword": "rule.",
       "careerOrientations": "fields where everything is regulated and structured. There is the possibility of career growth and a team of like-minded people. Lack of control, as people of the first type are self-oriented towards maximum results. The value of work is also important to them.",
       "possibleProfessions": "manager (including top manager), lawyer or attorney, banker, financier, accountant, product owner."
@@ -310,7 +309,7 @@
     "type_2": {
       "title": "Helper",
       "description": "People of the second type are relationship-oriented, insightful, caring, empathetic, loving, and generous. They are the glue people at work, often saying 'Yes' to others while completely forgetting about their own needs. 'Twos' want to be loved, giving their warmth and light to other people.",
-      "lifeCreed": "recognize the needs of others and offer help.",
+      "lifeMotto": "recognize the needs of others and offer help.",
       "keyword": "thank you.",
       "careerOrientations": "service-related fields, social entrepreneurship, non-profit organizations, and volunteering.",
       "possibleProfessions": "teacher, chef, firefighter, designer, event manager."
@@ -318,7 +317,7 @@
     "type_3": {
       "title": "Achiever",
       "description": "People of the third type are goal-oriented, active, efficient, self-confident, and attractive. They are incredible workaholics and easily adapt to different life situations because they strive for success and want to evoke enthusiasm.",
-      "lifeCreed": "life = work.",
+      "lifeMotto": "life = work.",
       "keyword": "goal.",
       "careerOrientations": "personal brand or positions with a high level of salary, the possibility of rapid career growth.",
       "possibleProfessions": "executive director, PR director, sales manager, project manager."
@@ -326,7 +325,7 @@
     "type_4": {
       "title": "Individualist",
       "description": "People of the fourth type are emotional, creative, and imaginative, standing out as romantic personalities. They believe that others love them for their uniqueness and originality, so they always want to express their individuality and stand out. One of their biggest fears is to be like everyone else.",
-      "lifeCreed": "creativity always and everywhere! Even when the work is routine, a person of the fourth type will bring a unique element to the execution—something unique.",
+      "lifeMotto": "creativity always and everywhere! Even when the work is routine, a person of the fourth type will bring a unique element to the execution—something unique.",
       "keyword": "emotion.",
       "careerOrientations": "any direction where they can creatively express themselves and implement their ideas.",
       "possibleProfessions": "psychologist, consultant, masseur, musician, actor, writer, artist, designer."
@@ -334,7 +333,7 @@
     "type_5": {
       "title": "Thinker",
       "description": "People of the fifth type are very knowledgeable, thoughtful, and deep—completely immerse themselves in the subject. They are successful strategists and good listeners as they aim to gather the maximum amount of information about the world around them.",
-      "lifeCreed": "accumulate knowledge about the world, about different spheres that interest them.",
+      "lifeMotto": "accumulate knowledge about the world, about different spheres that interest them.",
       "keyword": "expertise.",
       "careerOrientations": "science and technology, freelance (remote work).",
       "possibleProfessions": "financial director, architect, professor, or researcher, web developer."
@@ -342,7 +341,7 @@
     "type_6": {
       "title": "Skeptic",
       "description": "People of the sixth type can see different directions and ways of developing a situation, considering all possible outcomes, evaluating risks. They are constantly in the process of choosing and searching for the right decision. That's why they soberly assess what is happening, checking the world for strength.",
-      "lifeCreed": "seek support and resistance within oneself and among those around.",
+      "lifeMotto": "seek support and resistance within oneself and among those around.",
       "keyword": "choice.",
       "careerOrientations": "in any job, something worthwhile can be found.",
       "possibleProfessions": "government official, special services employee, lawyer, inspector, risk manager."
@@ -350,7 +349,7 @@
     "type_7": {
       "title": "Optimist",
       "description": "People of the seventh type view the world through a positive filter and focus on the good, seeking pleasure and wanting to get the most out of life. They easily engage in various projects, motivate themselves, quickly switch between tasks, but may not bring tasks to completion.",
-      "lifeCreed": "life is pleasure.",
+      "lifeMotto": "life is pleasure.",
       "keyword": "pleasure.",
       "careerOrientations": "personal brand, own project, or business, work in the entertainment industry, creative directions.",
       "possibleProfessions": "guide, travel agent, restaurant critic, musician, DJ, dancer, photographer."
@@ -358,7 +357,7 @@
     "type_8": {
       "title": "Boss",
       "description": "People of the eighth type know what they want from life, follow their inner 'I want,' are responsible, natural leaders, energetic, enduring, and strong. They are results-oriented, concrete, and practical in their approach. They often live by the principle: there are two points of view on every issue—wrong and mine.",
-      "lifeCreed": "develop strength and gain control.",
+      "lifeMotto": "develop strength and gain control.",
       "keyword": "justice.",
       "careerOrientations": "the opportunity to make decisions independently and the importance of scale—the ability to change the world.",
       "possibleProfessions": "entrepreneur, career consultant, CEO, marketing or sales director, executive director, politician."
@@ -366,7 +365,7 @@
     "type_9": {
       "title": "Peacemaker",
       "description": "People of the ninth type are peaceful, soulful, sensitive, empathetic, generous, and harmonious. Their unique feature is diplomacy—they have the ability to 'merge' with other people, dissolving their own needs and desires in them.",
-      "lifeCreed": "surround oneself with harmony and positivity, maintain a state of pacification, avoiding conflicts.",
+      "lifeMotto": "surround oneself with harmony and positivity, maintain a state of pacification, avoiding conflicts.",
       "keyword": "harmony.",
       "careerOrientations": "a calm rhythm and the absence of stress.",
       "possibleProfessions": "diplomat, employee of the trust service, teacher, professor, veterinarian, doctor, masseur."

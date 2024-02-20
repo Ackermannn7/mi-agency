@@ -21,7 +21,7 @@ export const Logo = ({ lang }) => {
     <Link href={`/${lang.locale}/`}>
       {imageSrc && (
         <Image
-          className='w-[100px] h-[40px] md:w-[120px] md:h-[50px]'
+          className='w-[100px] h-[40px] xl:w-[120px] xl:h-[50px]'
           src={imageSrc}
           alt={"psyMI"}
           loading={"lazy"}

@@ -6,7 +6,7 @@ const TestPlatforms = ({ font, lang }) => {
       className={
         font.className +
         " " +
-        "flex gap-y-[10px] gap-x-[10px] justify-between md:gap-[20px] flex-wrap max-w-[700px] mt-[20px]"
+        "flex gap-y-[10px] gap-x-[10px] md:gap-[30px] justify-evenly xl:justify-start flex-wrap md:max-w-full xl:max-w-[700px] mt-[20px]"
       }
     >
       {creatingTested?.map?.((test, i) => (

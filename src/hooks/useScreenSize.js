@@ -5,14 +5,18 @@ export const useScreenSize = () => {
     width: window?.outerWidth,
     height: window?.outerHeight,
     isMobile: window?.outerWidth < 768,
+    isTablet: window?.outerWidth > 767 && window?.outerWidth < 1024,
+    isNotLaptop: window?.outerWidth < 1024,
+    isNotDesktop: window?.outerWidth < 1280,
   });
-
   useEffect(() => {
     const handleResize = () => {
       setScreenSize({
         width: window?.outerWidth,
         height: window?.outerHeight,
         isMobile: window?.outerWidth < 768,
+        isTablet: window?.outerWidth > 767 && window?.outerWidth < 1024,
+        isNotDesktop: window?.outerWidth < 1280,
       });
     };
 

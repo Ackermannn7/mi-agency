@@ -162,7 +162,6 @@ export const PAEIResult = ({ answers, lang, contentRef, height }) => {
   // if (error) {
   //   return <div>Error: {error}</div>;
   // }
-
   return (
     <div
       ref={contentRef}
@@ -180,13 +179,14 @@ export const PAEIResult = ({ answers, lang, contentRef, height }) => {
           />
         )}
       </div>
-      <div className='md:w-[520px]'>
+      <div className='md:w-[400px] lg:w-[520px]'>
         <h1 className='text-center md:text-left text-[22px] md:text-[30px] font-unbounded mb-[10px]'>
           {lang.paei_result.header} {finalResult}
         </h1>
 
         {/* Используем результаты теста для отображения соответствующих описаний */}
         <p className='mt-[10px] mb-[30px] font-medium'>
+          <span className='text-[#347AEC] font-semibold'>{finalResult.split("")[0]}: </span>
           {
             localizedResults.find((desc) => desc.letter === "P")[
               finalResult.includes("P")
@@ -198,6 +198,7 @@ export const PAEIResult = ({ answers, lang, contentRef, height }) => {
           }
         </p>
         <p className='mb-[30px] font-medium'>
+          <span className='text-[#347AEC] font-semibold'>{finalResult.split("")[1]}: </span>
           {
             localizedResults.find((desc) => desc.letter === "A")[
               finalResult.includes("A")
@@ -209,6 +210,7 @@ export const PAEIResult = ({ answers, lang, contentRef, height }) => {
           }
         </p>
         <p className='mb-[30px] font-medium'>
+          <span className='text-[#347AEC] font-semibold'>{finalResult.split("")[2]}: </span>
           {
             localizedResults.find((desc) => desc.letter === "E")[
               finalResult.includes("E")
@@ -220,6 +222,7 @@ export const PAEIResult = ({ answers, lang, contentRef, height }) => {
           }
         </p>
         <p className='mb-[30px] font-medium'>
+          <span className='text-[#347AEC] font-semibold'>{finalResult.split("")[3]}: </span>
           {
             localizedResults.find((desc) => desc.letter === "I")[
               finalResult.includes("I")
@@ -231,7 +234,7 @@ export const PAEIResult = ({ answers, lang, contentRef, height }) => {
           }
         </p>
 
-        <div className='text-center mb-[20px] md:mb-0'>
+        <div className='text-center md:text-left mb-[20px] xl:mb-0'>
           <MainButton
             className='save-button w-[255px] h-[40px] text-[16px] px-[10px] !important'
             label={lang.paei_result.save_button}

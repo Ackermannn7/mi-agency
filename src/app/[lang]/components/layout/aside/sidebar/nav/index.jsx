@@ -7,7 +7,7 @@ import { useScreenSize } from "@/hooks/useScreenSize";
 import { Lang } from "../lang";
 export const Nav = ({ lang, userData }) => {
   const asideElements = asideNav();
-  const { isMobile } = useScreenSize();
+  const { isNotDesktop } = useScreenSize();
   const changeOrder = () => {
     const customOrder = ["/", "/news", "/get-tested/", "/my-profile"];
 
@@ -15,20 +15,20 @@ export const Nav = ({ lang, userData }) => {
       return customOrder.indexOf(a.href) - customOrder.indexOf(b.href);
     });
   };
-  if (isMobile) {
+  if (isNotDesktop) {
     changeOrder();
   }
   const [currentTab, setCurrentTab] = useState("1");
   return (
-    <ul className='flex flex-row md:flex-col items-start gap-[20px]'>
+    <ul className='flex flex-row justify-evenly xl:flex-col xl:gap-[20px]'>
       {asideElements
         .filter((el) => {
-          return !isMobile ? el.slug !== "my-profile" : true;
+          return !isNotDesktop ? el.slug !== "my-profile" : true;
         })
         ?.map?.((el, i) => {
           // Определите новый порядок для мобильной версии
           const mobileOrder = [0, 3, 1, 2];
-          const newIndex = isMobile ? mobileOrder[i] : i;
+          const newIndex = isNotDesktop ? mobileOrder[i] : i;
 
           return (
             <ItemNav
@@ -36,7 +36,7 @@ export const Nav = ({ lang, userData }) => {
               data={{
                 ...el,
                 label: lang.sidebar.nav.filter((el) => {
-                  return !isMobile ? el.key !== "my-profile" : true;
+                  return !isNotDesktop ? el.key !== "my-profile" : true;
                 })[newIndex],
                 locale: lang.locale,
                 userData: userData,
@@ -47,7 +47,7 @@ export const Nav = ({ lang, userData }) => {
             />
           );
         })}
-      <li className='md:hidden'>
+      <li className='xl:hidden'>
         <Lang lang={lang} />
       </li>
     </ul>

@@ -42,7 +42,7 @@ export const EnneagramaResult = ({ answers, lang, contentRef, height }) => {
     return null;
   }
 
-  const { type, title, description, lifeCreed, keyword, careerOrientations, possibleProfessions } =
+  const { type, title, description, lifeMotto, keyword, careerOrientations, possibleProfessions } =
     enneagramResultData;
 
   const handleSubmit = async (e) => {
@@ -144,24 +144,24 @@ export const EnneagramaResult = ({ answers, lang, contentRef, height }) => {
       <div>
         {imageSrc && (
           <Image
-            className='mb-[26px] md:mb-0 radius-[15px] w-[300px] h-[300px]'
+            className='mb-[26px] md:mb-0 md:mr-[30px] radius-[15px] w-[300px] h-[300px]'
             src={imageSrc}
             alt={"enneagram result"}
             loading='lazy'
           />
         )}
       </div>
-      <div className='md:w-[520px]'>
+      <div className='md:w-[400px] lg:w-[520px]'>
         <h1 className='text-center md:text-left text-[22px] md:text-[30px] font-unbounded mb-[10px]'>
           {title}
         </h1>
-        <p className='mx-auto md:mx-0 w-[60px] text-center bg-[#347AEC] text-[#fff] rounded-[5px] py-[3px] text-center'>
+        <p className='mx-auto md:mx-0 w-[60px] text-center bg-[#347AEC] text-[#fff] rounded-[5px] py-[3px]'>
           {resultType} {lang.enneagram_page.n_type}
         </p>
         <p className='my-[20px] font-medium'>{description}</p>
         <p className='mb-[20px] font-medium'>
-          <span className='text-[#347AEC] font-semibold'>{lang.enneagram_page.lifeCreed}</span>{" "}
-          {lifeCreed}
+          <span className='text-[#347AEC] font-semibold'>{lang.enneagram_page.lifeMotto}</span>{" "}
+          {lifeMotto}
         </p>
         <p className='mb-[20px] font-medium'>
           <span className='text-[#347AEC] font-semibold'>{lang.enneagram_page.keyword}</span>{" "}

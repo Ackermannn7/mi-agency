@@ -3,9 +3,10 @@ export const Post = ({ imageUrl, title, link, categories, index }) => {
 
   const truncatedTitle =
     title.length > MAX_TITLE_LENGTH ? `${title.substring(0, MAX_TITLE_LENGTH)}...` : title;
+
   return (
     <a className='relative' href={link} target='_blank'>
-      <div className='md:w-[410px] h-[280px] md:h-[300px] rounded-[10px] bg-white shadow-[0px 0px 20px 0px #6D7C8C1A] relative'>
+      <div className='xl:w-[410px] h-[280px] lg:h-[300px] rounded-[10px] bg-white shadow-[0px 0px 20px 0px #6D7C8C1A] relative'>
         <div className='h-[22px] w-[22px] rounded-[50%] bg-white top-[10px] left-[10px] absolute flex items-center justify-center'>
           <svg
             width='12'

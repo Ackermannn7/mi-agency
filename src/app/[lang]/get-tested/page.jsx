@@ -5,7 +5,7 @@ import { getDictionary } from "../../../../getDictionary";
 export default async function GetTested({ params }) {
   const lang = await getDictionary(params.lang);
   return (
-    <div className="pt-[20px] pb-[60px] md:pt-[60px] md:pb-0 gap-[25px] flex flex-wrap max-w-[900px]">
+    <div className='pt-[20px] pb-[60px] xl:pt-[60px] xl:pb-0 gap-[25px] flex flex-wrap'>
       {tests(lang)?.map?.((test, i) => (
         <CardTest
           data={{

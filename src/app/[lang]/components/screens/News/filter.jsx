@@ -25,7 +25,8 @@ const tagRender = (props) => {
 };
 
 export const Filter = ({ lang, onFilterChange }) => {
-  const { isMobile } = useScreenSize();
+  const { width } = useScreenSize();
+  console.log(width);
   const [selectedSocial, setSelectedSocial] = useState([]);
   const [selectedSphere, setSelectedSphere] = useState([]);
   const [selectedLanguage, setSelectedLanguage] = useState([]);
@@ -86,11 +87,11 @@ export const Filter = ({ lang, onFilterChange }) => {
   };
   return (
     <div>
-      {isMobile ? (
+      {width < 1025 ? (
         <div>
           <div
             onClick={toggleBlock}
-            className='md:hidden flex items-center justify-center z-10 fixed bottom-[11%]
+            className='flex items-center justify-center z-10 fixed bottom-[11%]
       left-1/2 transform -translate-x-1/2 my-[20px] rounded-[50px] max-w-[185px] w-full h-[45px] bg-white shadow-lg'
           >
             <div className='flex gap-[10px] text-center items-center'>
@@ -103,7 +104,7 @@ export const Filter = ({ lang, onFilterChange }) => {
               >
                 <path
                   fill-rule='evenodd'
-                  clip-rule='evenodd'
+                  clipRule='evenodd'
                   d='M7 13C10.3137 13 13 10.3137 13 7C13 3.68629 10.3137 1 7 1C3.68629 1 1 3.68629 1 7C1 10.3137 3.68629 13 7 13ZM7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14Z'
                   fill='black'
                 />
@@ -123,7 +124,7 @@ export const Filter = ({ lang, onFilterChange }) => {
                 >
                   <path
                     fill-rule='evenodd'
-                    clip-rule='evenodd'
+                    clipRule='evenodd'
                     d='M0.646484 1.35359L1.35359 0.646484L5.00004 4.29293L8.64648 0.646484L9.35359 1.35359L5.00004 5.70714L0.646484 1.35359Z'
                     fill='white'
                   />
@@ -209,7 +210,7 @@ export const Filter = ({ lang, onFilterChange }) => {
                 });
                 toggleBlock();
               }}
-              className='max-w-[420px] w-full h-[35px] flex items-center justify-center gap-2 bg-[#F2F5F8] rounded-[50px] text-[13px] text-[#262626] font-semibold uppercase'
+              className='w-full h-[35px] flex items-center justify-center gap-2 bg-[#F2F5F8] rounded-[50px] text-[13px] text-[#262626] font-semibold uppercase'
             >
               <svg
                 width='12'
@@ -266,7 +267,7 @@ export const Filter = ({ lang, onFilterChange }) => {
                 >
                   <path
                     fill-rule='evenodd'
-                    clip-rule='evenodd'
+                    clipRule='evenodd'
                     d='M7 13C10.3137 13 13 10.3137 13 7C13 3.68629 10.3137 1 7 1C3.68629 1 1 3.68629 1 7C1 10.3137 3.68629 13 7 13ZM7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14Z'
                     fill={selectedSocial?.length > 0 ? "white" : "#262626"}
                   />
@@ -292,7 +293,7 @@ export const Filter = ({ lang, onFilterChange }) => {
                   >
                     <path
                       fill-rule='evenodd'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                       d='M0.646484 1.35359L1.35359 0.646484L5.00004 4.29293L8.64648 0.646484L9.35359 1.35359L5.00004 5.70714L0.646484 1.35359Z'
                       fill={selectedSocial.length > 0 ? "white" : "#262626"}
                     />
@@ -334,7 +335,7 @@ export const Filter = ({ lang, onFilterChange }) => {
                 >
                   <path
                     fill-rule='evenodd'
-                    clip-rule='evenodd'
+                    clipRule='evenodd'
                     d='M7 13C10.3137 13 13 10.3137 13 7C13 3.68629 10.3137 1 7 1C3.68629 1 1 3.68629 1 7C1 10.3137 3.68629 13 7 13ZM7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14Z'
                     fill='#262626'
                   />
@@ -359,7 +360,7 @@ export const Filter = ({ lang, onFilterChange }) => {
                   >
                     <path
                       fill-rule='evenodd'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                       d='M0.646484 1.35359L1.35359 0.646484L5.00004 4.29293L8.64648 0.646484L9.35359 1.35359L5.00004 5.70714L0.646484 1.35359Z'
                       fill='#262626'
                     />
@@ -398,7 +399,7 @@ export const Filter = ({ lang, onFilterChange }) => {
                 >
                   <path
                     fill-rule='evenodd'
-                    clip-rule='evenodd'
+                    clipRule='evenodd'
                     d='M7 13C10.3137 13 13 10.3137 13 7C13 3.68629 10.3137 1 7 1C3.68629 1 1 3.68629 1 7C1 10.3137 3.68629 13 7 13ZM7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14Z'
                     fill='#262626'
                   />
@@ -420,7 +421,7 @@ export const Filter = ({ lang, onFilterChange }) => {
                   >
                     <path
                       fill-rule='evenodd'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                       d='M0.646484 1.35359L1.35359 0.646484L5.00004 4.29293L8.64648 0.646484L9.35359 1.35359L5.00004 5.70714L0.646484 1.35359Z'
                       fill='#262626'
                     />

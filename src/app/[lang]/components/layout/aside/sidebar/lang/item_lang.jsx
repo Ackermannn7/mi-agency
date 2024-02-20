@@ -70,20 +70,20 @@ export const ItemLang = ({ activeLang, setActiveLang, data, pathName, isMobile, 
         <button
           key={data.key}
           onClick={isMobile ? changeLangMobile : changeLang}
-          className='flex flex-col text-center md:flex-row items-center gap-[7px] md:gap-[14px] item-nav'
+          className='flex flex-col text-center xl:flex-row items-center gap-[7px] xl:gap-[14px] item-nav'
         >
           {imageSrc && (
             <Image
               className={`${
                 activeLang === data.key ? "grayscale-0" : "grayscale"
-              } w-[35px] h-[35px] md:w-[24px] md:h-[24px]`}
+              } w-[35px] h-[35px] xl:w-[24px] xl:h-[24px]`}
               aria-label={"Change to:" + data.alt}
               src={imageSrc}
               alt={data.alt}
               loading={"lazy"}
             />
           )}
-          <p className='md:hidden text-[9px] md:text-[16px] w-[50px] md:w-auto'>
+          <p className='xl:hidden text-[9px] xl:text-[16px] w-[50px] xl:w-auto'>
             {lang?.sidebar.language}
           </p>
         </button>

@@ -69,7 +69,7 @@ const News = ({ lang }) => {
   return (
     <div className='relative'>
       <Filter lang={lang} onFilterChange={handleFilterChange} />
-      <div className='md:pr-[190px] md:mt-[20px] grid grid-cols-1 md:grid-cols-2 gap-4'>
+      <div className='xl:pr-[190px] xl:mt-[20px] grid grid-cols-1 md:grid-cols-2 gap-4'>
         {filteredPosts.map((post, index) => (
           <Post key={index} {...post} index={index} />
         ))}
