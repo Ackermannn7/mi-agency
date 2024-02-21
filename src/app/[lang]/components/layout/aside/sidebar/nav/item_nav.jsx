@@ -16,7 +16,7 @@ export const ItemNav = ({ data, setCurrentTab, currentTab }) => {
         className='flex flex-col text-center xl:flex-row items-center gap-[7px] xl:gap-[14px] item-nav'
       >
         <span
-          className={`w-[35px] h-[35px] xl:w-[21px] xl:h-[21px] rounded-[100%] flex items-center justify-center ${
+          className={`relative object-cover w-[35px] h-[35px] xl:w-[21px] xl:h-[21px] rounded-[100%] flex items-center justify-center ${
             data.slug === slug ? "bg-[#347AEC] nav active-nav" : "nav bg-[#F2F5F8]"
           } ${
             isNotDesktop &&
@@ -28,8 +28,7 @@ export const ItemNav = ({ data, setCurrentTab, currentTab }) => {
             <Image
               className='rounded-[100%]'
               aria-label={"Change to:" + data.alt}
-              width={35}
-              height={35}
+              fill
               src={data.userData.photo}
               alt={data.userData.first_name}
               loading={"lazy"}

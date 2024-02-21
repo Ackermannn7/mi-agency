@@ -2,31 +2,31 @@ export default [
   {
     key: 1,
     href: "",
-    emoji: "💼",
+    emoji: "1.png",
   },
   {
     key: 2,
     href: "",
-    emoji: "🔝",
+    emoji: "2.png",
   },
   {
     key: 3,
     href: "",
-    emoji: "👩‍💼",
+    emoji: "3.png",
   },
   {
     key: 4,
     href: "",
-    emoji: "👨‍💻",
+    emoji: "4.png",
   },
   {
     key: 5,
     href: "",
-    emoji: "💁‍",
+    emoji: "5.png",
   },
   {
     key: 6,
     href: "",
-    emoji: "🧠",
+    emoji: "6.png",
   },
 ];

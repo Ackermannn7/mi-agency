@@ -227,7 +227,7 @@ const MyProfile = ({ lang }) => {
               </button>
 
               <Image
-                className='rounded-[100%]'
+                className='rounded-[100%] object-cover'
                 src={userData.photo}
                 alt={userData.first_name}
                 width={width < 380 ? 150 : 170}

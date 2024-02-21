@@ -19,7 +19,7 @@ export const tests = (lang) => {
       page: {
         title: lang.paei_page.title,
         description: (
-          <p className='text-[#262626] font-[400] leading-5 tracking-wide'>
+          <p className='text-[#262626] font-[500] leading-5 tracking-wide'>
             {lang.paei_page.description_1}{" "}
             <span className='font-semibold'>{lang.paei_page.description_2}</span>{" "}
             {lang.paei_page.description_3}{" "}
@@ -40,7 +40,7 @@ export const tests = (lang) => {
               </div>
               <div className='hidden xl:block -scale-x-100'>
                 <Image
-                  className='w-[150px] h-[200px]'
+                  className='w-[150px] h-[200px] object-contain'
                   src={robotLookImg}
                   alt={"robot look"}
                   loading='lazy'
@@ -65,7 +65,7 @@ export const tests = (lang) => {
       page: {
         title: lang.enneagram_page.title,
         description: (
-          <p className='font-[500] leading-[130%] max-w-full xl:w-[80%]'>
+          <p className='font-[500] leading-[130%] max-w-full xl:w-[55%]'>
             <span className='text-[#262626] font-[700]'>{lang.enneagram_page.title}</span>{" "}
             {lang.enneagram_page.description}
           </p>
@@ -74,7 +74,7 @@ export const tests = (lang) => {
           <section>
             <div className='flex flex-col-reverse lg:flex-row items-center gap-[27px]'>
               <Image
-                className='hidden lg:block w-[150px] h-[200px]'
+                className='hidden lg:block w-[150px] h-[200px] object-contain'
                 src={robotLookImg}
                 alt={"robot look"}
                 loading='lazy'
@@ -86,7 +86,7 @@ export const tests = (lang) => {
                 </div>
               </div>
               <Image
-                className='w-[250px] h-[250px]'
+                className='w-[250px] h-[250px] object-contain'
                 src={enneagramImg}
                 alt={"enneagram look"}
                 loading='lazy'

@@ -13,12 +13,12 @@ const User = ({
   lang,
 }) => {
   return (
-    <div className='hidden xl:flex xl:gap-[10px]'>
+    <div className='hidden xl:flex w-full'>
       <Default
         userData={userData}
         //  user={user}
       />
-      <div>
+      <div className=' w-[50%] ml-[10px]'>
         <div className='mb-[6px]'>
           {/* {user ? (
             <p className={font.className + " " + "text-[#262626] font-[400]"}>

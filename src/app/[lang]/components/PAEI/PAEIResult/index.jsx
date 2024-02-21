@@ -179,13 +179,13 @@ export const PAEIResult = ({ answers, lang, contentRef, height }) => {
           />
         )}
       </div>
-      <div className='md:w-[400px] lg:w-[520px]'>
-        <h1 className='text-center md:text-left text-[22px] md:text-[30px] font-unbounded mb-[10px]'>
+      <div className='md:w-[400px] lg:w-[520px] font-monserrat text-[#262626] leading-5'>
+        <h1 className='text-center md:text-left text-[22px] md:text-[30px] font-unbounded mt-[4px]'>
           {lang.paei_result.header} {finalResult}
         </h1>
 
         {/* Используем результаты теста для отображения соответствующих описаний */}
-        <p className='mt-[10px] mb-[30px] font-medium'>
+        <p className='mt-[10px] mb-[15px] font-medium'>
           <span className='text-[#347AEC] font-semibold'>{finalResult.split("")[0]}: </span>
           {
             localizedResults.find((desc) => desc.letter === "P")[
@@ -197,7 +197,7 @@ export const PAEIResult = ({ answers, lang, contentRef, height }) => {
             ]
           }
         </p>
-        <p className='mb-[30px] font-medium'>
+        <p className='mb-[15px] font-medium'>
           <span className='text-[#347AEC] font-semibold'>{finalResult.split("")[1]}: </span>
           {
             localizedResults.find((desc) => desc.letter === "A")[
@@ -209,7 +209,7 @@ export const PAEIResult = ({ answers, lang, contentRef, height }) => {
             ]
           }
         </p>
-        <p className='mb-[30px] font-medium'>
+        <p className='mb-[15px] font-medium'>
           <span className='text-[#347AEC] font-semibold'>{finalResult.split("")[2]}: </span>
           {
             localizedResults.find((desc) => desc.letter === "E")[
@@ -221,7 +221,7 @@ export const PAEIResult = ({ answers, lang, contentRef, height }) => {
             ]
           }
         </p>
-        <p className='mb-[30px] font-medium'>
+        <p className='mb-[15px] font-medium'>
           <span className='text-[#347AEC] font-semibold'>{finalResult.split("")[3]}: </span>
           {
             localizedResults.find((desc) => desc.letter === "I")[

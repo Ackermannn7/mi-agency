@@ -12,27 +12,27 @@
   },
   "test_platforms": [
     {
-      "first_part": "Для власників",
-      "second_part": "бізнесу / СЕО"
-    },
-    {
-      "first_part": "Для C-Level",
+      "first_part": "Founder & CEO",
       "second_part": ""
     },
     {
-      "first_part": "Для HR Team",
+      "first_part": "C-Level",
       "second_part": ""
     },
     {
-      "first_part": "Для Senior / Middle / ",
-      "second_part": " Junior спеціалістів"
-    },
-    {
-      "first_part": "Для кандидатів",
+      "first_part": "HR Staff",
       "second_part": ""
     },
     {
-      "first_part": "Для психологів",
+      "first_part": "Junior-Senior",
+      "second_part": "спеціалістів"
+    },
+    {
+      "first_part": "Тих, хто шукає",
+      "second_part": "себе"
+    },
+    {
+      "first_part": "Психологів",
       "second_part": ""
     }
   ],

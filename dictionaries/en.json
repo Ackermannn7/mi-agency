@@ -12,27 +12,27 @@
   },
   "test_platforms": [
     {
-      "first_part": "For business",
-      "second_part": "owners / CEOs"
-    },
-    {
-      "first_part": "For top managers",
-      "second_part": "managers"
-    },
-    {
-      "first_part": "For the HR Team",
+      "first_part": "Founder & CEO",
       "second_part": ""
     },
     {
-      "first_part": "For Senior / Middle / ",
-      "second_part": " Junior specialists"
-    },
-    {
-      "first_part": "For candidates",
+      "first_part": "C-Level",
       "second_part": ""
     },
     {
-      "first_part": "For psychologists",
+      "first_part": "HR Staff",
+      "second_part": ""
+    },
+    {
+      "first_part": "Junior-Senior",
+      "second_part": "specialists"
+    },
+    {
+      "first_part": "Self-Seekers",
+      "second_part": ""
+    },
+    {
+      "first_part": "Psychologists",
       "second_part": ""
     }
   ],

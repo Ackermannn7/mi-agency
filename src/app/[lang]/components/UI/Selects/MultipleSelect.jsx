@@ -1,7 +1,6 @@
 "use client";
 
 import { Select } from "antd";
-
 export const MultipleSelect = ({ className = "", onChange, lang }) => {
   const options = [
     {
@@ -57,15 +56,22 @@ export const MultipleSelect = ({ className = "", onChange, lang }) => {
   const selectProps = {
     style: {
       width: "100%",
+      fontFamily: "inherit",
+      fontWeight: "medium",
     },
     onChange: onChange,
     autoClearSearchValue: false,
     options,
     showArrow: true,
     border: false,
-    placeholder: lang.login_page.created_profile.activity.placeholder,
     maxTagCount: "responsive",
   };
 
-  return <Select className={`select-proff ${className}`} {...selectProps} />;
+  return (
+    <Select
+      placeholder={lang.login_page.created_profile.activity.placeholder}
+      className={` ${className} select-proff placeholder:italic`}
+      {...selectProps}
+    />
+  );
 };

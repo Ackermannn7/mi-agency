@@ -2,12 +2,13 @@
 
 import { useState, useRef, useEffect } from "react";
 import MainButton from "../../UI/Buttons/MainButton";
+import { useScreenSize } from "@/hooks/useScreenSize";
 
 export const PAEIDescription = ({ lang }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [height, setHeight] = useState("auto");
   const contentRef = useRef(null);
-
+  const { width } = useScreenSize();
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
@@ -39,17 +40,17 @@ export const PAEIDescription = ({ lang }) => {
       <div
         ref={contentRef}
         style={{ maxHeight: height }}
-        className={`w-full transition-max-height duration-300 ease-in-out overflow-hidden flex flex-col justify-between`}
+        className={`mt-[30px] w-full transition-max-height duration-300 ease-in-out overflow-hidden flex flex-col justify-between`}
       >
         <div className='flex items-start gap-[15px] mb-[30px]'>
           <p className='text-center min-w-[80px] xl:min-w-[100px] font-unbounded bg-gradient-to-r from-[#347AEC] to-[#6764E7] inline-block text-transparent bg-clip-text text-7xl xl:text-8xl font-semibold'>
             P
           </p>
           <div className='max-w-[700px] pt-[10px]'>
-            <h5 className='font-unbounded text-[#262626] uppercase font-[500]'>
+            <h5 className={`font-unbounded text-[#262626] leading-5 uppercase font-[500] `}>
               {lang.paei_description.p_header}
             </h5>
-            <p className='text-[#262626] font-[500] leading-6 mt-[10px]'>
+            <p className='text-[#262626] font-[500] leading-5 mt-[10px]'>
               {lang.paei_description.p_description}
             </p>
           </div>
@@ -59,10 +60,10 @@ export const PAEIDescription = ({ lang }) => {
             А
           </p>
           <div className='max-w-[700px] pt-[10px]'>
-            <h5 className='font-unbounded text-[#262626] uppercase font-[500]'>
+            <h5 className='font-unbounded text-[#262626] leading-5 uppercase font-[500]'>
               {lang.paei_description.a_header}
             </h5>
-            <p className='text-[#262626] font-[500] leading-6 mt-[10px]'>
+            <p className='text-[#262626] font-[500] leading-5 mt-[10px]'>
               {lang.paei_description.a_description}
             </p>
           </div>
@@ -72,10 +73,10 @@ export const PAEIDescription = ({ lang }) => {
             E
           </p>
           <div className='max-w-[700px] pt-[10px]'>
-            <h5 className='font-unbounded text-[#262626] uppercase font-[500]'>
+            <h5 className='font-unbounded text-[#262626] leading-5 uppercase font-[500]'>
               {lang.paei_description.e_header}
             </h5>
-            <p className='text-[#262626] font-[500] leading-6 mt-[10px]'>
+            <p className='text-[#262626] font-[500] leading-5 mt-[10px]'>
               {lang.paei_description.e_description}
             </p>
           </div>
@@ -85,10 +86,10 @@ export const PAEIDescription = ({ lang }) => {
             I
           </p>
           <div className='max-w-[700px] pt-[10px]'>
-            <h5 className='font-unbounded text-[#262626] uppercase font-[500]'>
+            <h5 className='font-unbounded text-[#262626] leading-5 uppercase font-[500]'>
               {lang.paei_description.i_header}
             </h5>
-            <p className='text-[#262626] font-[500] leading-6 mt-[10px]'>
+            <p className='text-[#262626] font-[500] leading-5 mt-[10px]'>
               {lang.paei_description.i_description}
             </p>
           </div>

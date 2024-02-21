@@ -224,12 +224,13 @@ select {
 .select-proff .ant-select-selector {
   background-color: #f2f5f8 !important;
   border: none !important;
-  padding: 7px 5px;
+  padding-left: 10px;
   height: 40px;
 }
 
 .select-proff .ant-select-selection-placeholder {
   color: #5e5e5e !important;
   font-size: 12px;
+  margin-left: 4px;
   font-weight: 500 !important;
 }

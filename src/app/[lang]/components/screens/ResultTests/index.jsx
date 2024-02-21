@@ -85,7 +85,7 @@ const ResultTests = ({ lang, id }) => {
             />
           )}
         </div>
-        <div className='md:w-[400px] lg:w-[520px] lg:h-[460px]'>
+        <div className='text-[#262626] leading-5 md:w-[400px] lg:w-[520px] lg:h-[460px]'>
           <h1 className='text-center md:text-left text-[22px] md:text-[30px] font-unbounded mb-[10px]'>
             {enneagramResultData.title}
           </h1>
@@ -131,7 +131,7 @@ const ResultTests = ({ lang, id }) => {
             />
           )}
         </div>
-        <div className='md:w-[400px] lg:w-[520px] lg:h-[460px]'>
+        <div className='text-[#262626] leading-5 md:w-[400px] lg:w-[520px] lg:h-[460px]'>
           <h1 className='text-center md:text-left text-[22px] lg:text-[30px] font-unbounded mb-[10px]'>
             {lang.paei_result.header} {resultTest?.type}
           </h1>

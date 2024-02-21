@@ -2,13 +2,16 @@ import Image from "next/image";
 
 export const Default = ({ userData }) => {
   return (
-    <>
+    <div className='w-[67px] h-[67px] relative'>
       {userData?.photo ? (
-        <div className='rounded-[9px] w-[67px] h-[67px] overflow-hidden'>
-          <Image width={67} height={67} src={userData?.photo} alt={userData?.first_name} />
-        </div>
+        <Image
+          className='rounded-[9px] object-cover'
+          fill
+          src={userData?.photo}
+          alt={userData?.first_name}
+        />
       ) : (
-        <div className='default-avatar rounded-[9px] w-[67px] h-[67px] flex items-center justify-center'>
+        <div className='default-avatar rounded-[9px] flex items-center justify-center'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='67'
@@ -27,6 +30,6 @@ export const Default = ({ userData }) => {
           </svg>
         </div>
       )}
-    </>
+    </div>
   );
 };
